@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>七班关机党 - Shut Down Party of Class Seven</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
 </head>
-
 <body class="mdui-theme-primary-indigo">
 
     <header class="mdui-appbar mdui-appbar-fixed">
         <div class="mdui-container mdui-color-red">
             <div class="mdui-toolbar mdui-color-red">
-                <button class="mdui-btn mdui-btn-icon mdui-hidden-md-up" id="drawerToggle">
-                    <i class="mdui-icon material-icons">menu</i>
-                </button>
-                <img src="sdpcs.github.io/shutdown.jpg" alt="shutdown icon" style="max-height: 24px; margin-right: 8px;">
+                <img src="https://sdpcs.github.io/shutdown.png" alt="shutdown icon" style="max-height: 24px; margin-right: 8px;">
                 <a href="#" class="mdui-typo-title mdui-text-color-yellow">七班关机党</a>
                 <div class="mdui-toolbar-spacer"></div>
                 <a href="#" class="mdui-typo-subheading mdui-text-color-yellow">Shut Down Party of Class Seven</a>
-                <button class="mdui-btn mdui-btn-icon" id="darkModeToggle">
+                <button class="mdui-btn mdui-btn-icon" onclick="toggleDarkMode()">
                     <i class="mdui-icon material-icons">brightness_4</i>
                 </button>
             </div>
         </div>
     </header>
-
-    <!-- 左侧抽屉栏 -->
-    <div class="mdui-drawer" id="leftDrawer">
-        <ul class="mdui-list">
-            <li class="mdui-list-item"><a href="#introduction">序言</a></li>
-            <li class="mdui-list-item"><a href="#overview">总纲</a></li>
-            <li class="mdui-list-item"><a href="#organization">组织机构</a></li>
-            <li class="mdui-list-item"><a href="#it_communist">信息技术共产</a></li>
-            <li class="mdui-list-item"><a href="#economic_construction">经济建设</a></li>
-            <li class="mdui-list-item"><a href="#leadership_responsibility">领导人责任</a></li>
-            <li class="mdui-list-item"><a href="#legal_responsibility">法律责任</a></li>
-            <li class="mdui-list-item"><a href="#oath">宣誓</a></li>
-        </ul>
-    </div>
 
     <div class="mdui-container" style="text-align: center;">
         <!-- 添加调整大小的照片 -->
@@ -47,6 +28,15 @@
 
         <div class="mdui-typo">
             <h1>七班关机党章程</h1>
+
+            <a href="#introduction" class="mdui-btn mdui-btn-raised">序言</a>
+            <a href="#overview" class="mdui-btn mdui-btn-raised">总纲</a>
+            <a href="#organization" class="mdui-btn mdui-btn-raised">组织机构</a>
+            <a href="#it_communist" class="mdui-btn mdui-btn-raised">信息技术共产</a>
+            <a href="#economic_construction" class="mdui-btn mdui-btn-raised">经济建设</a>
+            <a href="#leadership_responsibility" class="mdui-btn mdui-btn-raised">领导人责任</a>
+            <a href="#legal_responsibility" class="mdui-btn mdui-btn-raised">法律责任</a>
+            <a href="#oath" class="mdui-btn mdui-btn-raised">宣誓</a>
 
             <h2 id="introduction">序言</h2>
             <p>七班同学们在社会主义事业的征途上，迎来了一个全新的篇章。我们团结一致，秉持着马克思列宁主义的指导思想，以社会主义制度为基石，携手努力，共同建设一个和谐、公正、平等的班级。然而，在这个充满理想的舞台上，我们也面临着一些困扰和挑战。</p>
@@ -61,16 +51,21 @@
 
             <p>让我们携手共进，为实现关机和信息技术的共产而努力奋斗。相信在我们共同的努力下，七班将迎来更加美好的明天，充满着理想、希望和团结的力量。</p>
 
-            
+            <div class="divider"></div>
+      
             <h3 id="overview">第一章 总纲</h3>
             <p>第一条 七班关机党是社会主义同学七班的核心领导力量，坚持以马克思列宁主义为指导思想，以社会主义制度为基石，推动全班同学共同奋斗。</p>
   
             <p>第二条 七班关机党的最高目标是实现关机，为同学们创造更好的学习环境，促使班级事务的健康发展。</p>
 
+            <div class="divider"></div>
+
             <h3 id="organization">第二章 组织机构</h3>
             <p>第三条 七班关机党设立全班党员代表大会和中央委员会，由全班党员选举产生。中央委员会选举产生总书记，总书记为七班关机党最高领导。</p>
 
             <p>第四条 全班党员代表大会是七班关机党的最高权力机关，每学期召开一次，重大问题可随时召开。大会决定关机党的大事，选举产生关机党的领导人。</p>
+
+            <div class="divider"></div>
 
             <h3 id="it_communist">第三章 信息技术共产</h3>
             <p>第五条 七班关机党将积极推动信息技术的共产，打破郑铭蜂对信息技术的垄断，实现信息技术的公平分享和共同利用。</p>
@@ -80,8 +75,12 @@
             <p>第七条 七班关机党倡导在郑铭蜂玩电脑的时候进行关机，以实现信息技术的共产和公正分配。</p>
 
 
+            <div class="divider"></div>
+
             <h3 id="economic_construction">第四章 经济建设</h3>
             <p>第八条 七班关机党将在信息技术共产的基础上，鼓励同学们积极参与经济建设，共同创造富裕和谐的班级。</p>
+
+            <div class="divider"></div>
 
             <h3 id="leadership_responsibility">第五章 领导人责任</h3>
             <p>第九条 关机党的领导人应当密切关注同学们的需求，切实维护同学们的权益，听取和尊重全班同学的意见，确保关机党的决策合理公正。</p>
@@ -89,12 +88,18 @@
             <p>第十条 领导人要严守关机党的纪律，不得违背关机党章程的规定，不得谋取私利，要为实现关机和班级共同目标而努力。</p>
 
 
+            <div class="divider"></div>
+
             <h3 id="legal_responsibility">第六章 法律责任</h3>
             <p>第十一条 关机党对于违反关机党章程的行为将进行批评教育，经过教育无效的，将追究其法律责任。</p>
 
 
+            <div class="divider"></div>
+
             <h3 id="oath">第七章 宣誓</h3>
             <p>第十二条 七班关机党党员在加入关机党时应当庄重宣誓：维护班级的关机事业，忠诚于关机党，不谋取私利，为同学们创造更好的学习环境而努力奋斗。</p>
+
+            <div class="divider"></div>
 
             <h3>附则</h3>
             <p>第十三条 本章程的修改由全班党员代表大会决定，经中央委员会批准后生效。</p>
@@ -108,20 +113,10 @@
     <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
 
     <script>
-        var darkModeToggle = document.getElementById('darkModeToggle');
-        var body = document.body;
-
-        darkModeToggle.addEventListener('click', function () {
+        function toggleDarkMode() {
+            var body = document.body;
             body.classList.toggle("mdui-theme-layout-dark");
-        });
-
-        var drawerToggle = document.getElementById('drawerToggle');
-        var leftDrawer = new mdui.Drawer('#leftDrawer');
-
-        drawerToggle.addEventListener('click', function () {
-            leftDrawer.toggle();
-        });
+        }
     </script>
 </body>
-
 </html>
