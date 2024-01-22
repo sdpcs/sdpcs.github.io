@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>七班关机党 - Shut Down Party of Class Seven</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
 </head>
+
 <body class="mdui-theme-primary-indigo">
 
     <header class="mdui-appbar mdui-appbar-fixed">
         <div class="mdui-container mdui-color-red">
             <div class="mdui-toolbar mdui-color-red">
-                <img src="shutdown.png" alt="shutdown icon" style="max-height: 24px; margin-right: 8px;">
+                <button class="mdui-btn mdui-btn-icon mdui-hidden-md-up" id="drawerToggle">
+                    <i class="mdui-icon material-icons">menu</i>
+                </button>
+                <img src="sdpcs.github.io/shutdown.jpg" alt="shutdown icon" style="max-height: 24px; margin-right: 8px;">
                 <a href="#" class="mdui-typo-title mdui-text-color-yellow">七班关机党</a>
                 <div class="mdui-toolbar-spacer"></div>
                 <a href="#" class="mdui-typo-subheading mdui-text-color-yellow">Shut Down Party of Class Seven</a>
-                <button class="mdui-btn mdui-btn-icon" onclick="toggleDarkMode()">
+                <button class="mdui-btn mdui-btn-icon" id="darkModeToggle">
                     <i class="mdui-icon material-icons">brightness_4</i>
                 </button>
             </div>
         </div>
     </header>
+
+    <!-- 左侧抽屉栏 -->
+    <div class="mdui-drawer" id="leftDrawer">
+        <ul class="mdui-list">
+            <li class="mdui-list-item"><a href="#introduction">序言</a></li>
+            <li class="mdui-list-item"><a href="#overview">总纲</a></li>
+            <li class="mdui-list-item"><a href="#organization">组织机构</a></li>
+            <li class="mdui-list-item"><a href="#it_communist">信息技术共产</a></li>
+            <li class="mdui-list-item"><a href="#economic_construction">经济建设</a></li>
+            <li class="mdui-list-item"><a href="#leadership_responsibility">领导人责任</a></li>
+            <li class="mdui-list-item"><a href="#legal_responsibility">法律责任</a></li>
+            <li class="mdui-list-item"><a href="#oath">宣誓</a></li>
+        </ul>
+    </div>
 
     <div class="mdui-container" style="text-align: center;">
         <!-- 添加调整大小的照片 -->
@@ -28,15 +47,6 @@
 
         <div class="mdui-typo">
             <h1>七班关机党章程</h1>
-
-            <a href="#introduction" class="mdui-btn mdui-btn-raised">序言</a>
-            <a href="#overview" class="mdui-btn mdui-btn-raised">总纲</a>
-            <a href="#organization" class="mdui-btn mdui-btn-raised">组织机构</a>
-            <a href="#it_communist" class="mdui-btn mdui-btn-raised">信息技术共产</a>
-            <a href="#economic_construction" class="mdui-btn mdui-btn-raised">经济建设</a>
-            <a href="#leadership_responsibility" class="mdui-btn mdui-btn-raised">领导人责任</a>
-            <a href="#legal_responsibility" class="mdui-btn mdui-btn-raised">法律责任</a>
-            <a href="#oath" class="mdui-btn mdui-btn-raised">宣誓</a>
 
             <h2 id="introduction">序言</h2>
             <p>七班同学们在社会主义事业的征途上，迎来了一个全新的篇章。我们团结一致，秉持着马克思列宁主义的指导思想，以社会主义制度为基石，携手努力，共同建设一个和谐、公正、平等的班级。然而，在这个充满理想的舞台上，我们也面临着一些困扰和挑战。</p>
@@ -98,10 +108,20 @@
     <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
 
     <script>
-        function toggleDarkMode() {
-            var body = document.body;
+        var darkModeToggle = document.getElementById('darkModeToggle');
+        var body = document.body;
+
+        darkModeToggle.addEventListener('click', function () {
             body.classList.toggle("mdui-theme-layout-dark");
-        }
+        });
+
+        var drawerToggle = document.getElementById('drawerToggle');
+        var leftDrawer = new mdui.Drawer('#leftDrawer');
+
+        drawerToggle.addEventListener('click', function () {
+            leftDrawer.toggle();
+        });
     </script>
 </body>
+
 </html>
