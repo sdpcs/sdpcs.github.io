@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>七班关机党 - Shut Down Party of Class Seven</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+    <audio id="myAudio" src="https://sdpcs.github.io/bee.mp3" preload="auto"></audio>
 </head>
 <body class="mdui-theme-primary-indigo">
 
@@ -17,6 +18,9 @@
                 <a href="#" class="mdui-typo-subheading mdui-text-color-yellow">Shut Down Party of Class Seven</a>
                 <button class="mdui-btn mdui-btn-icon" onclick="toggleDarkMode()">
                     <i class="mdui-icon material-icons">brightness_4</i>
+                </button>
+                <button class="mdui-btn mdui-btn-icon" onclick="toggleAudioPopup()">
+                <i class="mdui-icon material-icons">audiotrack</i>
                 </button>
             </div>
         </div>
@@ -118,5 +122,20 @@
             body.classList.toggle("mdui-theme-layout-dark");
         }
     </script>
+    <script>
+    function toggleAudioPopup() {
+        // 获取音频元素
+        var audio = document.getElementById('myAudio');
+
+        // 判断音频是否正在播放
+        if (audio.paused) {
+            // 如果暂停，则开始播放
+            audio.play();
+        } else {
+            // 如果正在播放，则暂停
+            audio.pause();
+        }
+    }
+     </script>
 </body>
 </html>
