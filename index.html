@@ -207,18 +207,18 @@
     </div>
 </div>
 
-<script>
-    function openJoinDialog() {
-        var dialog = new mdui.Dialog('#joinModal');
-        dialog.open();
-    }
+    <script>
+        function openJoinDialog() {
+            var dialog = new mdui.Dialog('#joinModal');
+            dialog.open();
+        }
 
-    function submitForm() {
-        var name = document.getElementById("nameInput").value;
-        alert("已提交：" + name,但其实这是假的);
-        mdui.close('#joinModal');
+        function submitForm() {
+            var name = document.getElementById("nameInput").value;
+            alert("已提交：" + name,但其实这是假的);
+            mdui.close('#joinModal');
     }
-</script>
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
 
