@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
     <audio id="myAudio" src="https://sdpcs.github.io/bee.mp3" preload="auto"></audio>
 </head>
-<body class="mdui-theme-primary-indigo">
+<body class="mdui-theme-primary-indigo mdui-loaded mdui-appbar-with-toolbar mdui-drawer-body-left">
 
     <header class="mdui-appbar mdui-appbar-fixed">
         <div class="mdui-container mdui-color-red">
             <div class="mdui-toolbar mdui-color-red">
+                <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-yellow" mdui-drawer="{target: '#main-drawer', swipe: true}">
+                <i class="mdui-icon material-icons">menu</i>
+                </span>
                 <img src="https://sdpcs.github.io/shutdown.png" alt="shutdown icon" style="max-height: 24px; margin-right: 8px;">
                 <a href="#" class="mdui-typo-title mdui-text-color-yellow">七班关机党</a>
                 <div class="mdui-toolbar-spacer"></div>
@@ -25,6 +28,28 @@
             </div>
         </div>
     </header>
+    
+   <div class="mdui-drawer" id="main-drawer">
+    <ul class="mdui-list" mdui-collapse="{accordion: false}" id="folders-list">
+        <li class="mdui-collapse-item mdui-collapse-item-open">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-content">七班关机党章程</div>
+                <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                <li><a href="#introduction" class="mdui-btn mdui-btn-raised">序言</a></li>
+                <li><a href="#overview" class="mdui-btn mdui-btn-raised">总纲</a></li>
+                <li><a href="#organization" class="mdui-btn mdui-btn-raised">组织机构</a></li>
+                <li><a href="#it_communist" class="mdui-btn mdui-btn-raised">信息技术共产</a></li>
+                <li><a href="#economic_construction" class="mdui-btn mdui-btn-raised">经济建设</a></li>
+                <li><a href="#leadership_responsibility" class="mdui-btn mdui-btn-raised">领导人责任</a></li>
+                <li><a href="#legal_responsibility" class="mdui-btn mdui-btn-raised">法律责任</a></li>
+                <li><a href="#oath" class="mdui-btn mdui-btn-raised">宣誓</a></li>
+            </ul>
+         </li>
+     </ul>
+    </div>
+
 
     <div class="mdui-container" style="text-align: center;">
         <!-- 添加调整大小的照片 -->
@@ -33,16 +58,7 @@
 
         <div class="mdui-typo">
             <h1>七班关机党章程</h1>
-
-            <a href="#introduction" class="mdui-btn mdui-btn-raised">序言</a>
-            <a href="#overview" class="mdui-btn mdui-btn-raised">总纲</a>
-            <a href="#organization" class="mdui-btn mdui-btn-raised">组织机构</a>
-            <a href="#it_communist" class="mdui-btn mdui-btn-raised">信息技术共产</a>
-            <a href="#economic_construction" class="mdui-btn mdui-btn-raised">经济建设</a>
-            <a href="#leadership_responsibility" class="mdui-btn mdui-btn-raised">领导人责任</a>
-            <a href="#legal_responsibility" class="mdui-btn mdui-btn-raised">法律责任</a>
-            <a href="#oath" class="mdui-btn mdui-btn-raised">宣誓</a>
-
+            
             <h2 id="introduction">序言</h2>
             <p>七班同学们在社会主义事业的征途上，迎来了一个全新的篇章。我们团结一致，秉持着马克思列宁主义的指导思想，以社会主义制度为基石，携手努力，共同建设一个和谐、公正、平等的班级。然而，在这个充满理想的舞台上，我们也面临着一些困扰和挑战。</p>
 
