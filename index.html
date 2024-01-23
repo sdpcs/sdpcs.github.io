@@ -21,23 +21,15 @@
         }
     </style>
     <style>
-        /* 照片右侧布局样式 */
-        .mdui-container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-
+        /* 照片右浮动样式 */
         .mdui-typo {
             max-width: 70%;
-            margin-right: 30px; /* 调整原文和照片之间的间距 */
         }
 
         .mdui-img-rounded {
             max-width: 25%;
-            margin-top: 80px;
-            float: right;
+            float: right; /* 将照片浮动到右边 */
+            margin: 20px 0 20px 20px; /* 调整照片与文字之间的间距 */
         }
     </style>
 
@@ -348,11 +340,8 @@
             </div>
             </div>
             <div class="divider"></div>
-           
-            <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded" style="max-width: 25%; margin-top: 80px;">
-            <a>Bee</a> 
-
         </div>
+        <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded">
     </div>
 
     <div class="mdui-dialog" id="joinModal">
