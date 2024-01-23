@@ -32,7 +32,7 @@
                 <button class="mdui-btn mdui-btn-icon" onclick="toggleAudioPopup()">
                 <i class="mdui-icon material-icons">audiotrack</i>
                 </button>
-                <button class="mdui-btn mdui-btn-icon" onclick="openJoinDialog()">加入</button>
+                <button class="mdui-btn" onclick="openJoinDialog()">加入</button>
             </div>
         </div>
     </header>
@@ -196,27 +196,22 @@
     </div>
     <div class="mdui-dialog-actions">
         <button class="mdui-btn mdui-ripple" onclick="submitForm()">提交</button>
-        <button class="mdui-btn mdui-ripple" onclick="closeJoinDialog()">关闭</button>
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
     </div>
-    </div>
+</div>
 
-    <script>
+<script>
     function openJoinDialog() {
         var dialog = new mdui.Dialog('#joinModal');
         dialog.open();
     }
 
-    function closeJoinDialog() {
-        var dialog = new mdui.Dialog('#joinModal');
-        dialog.close();
-    }
-
     function submitForm() {
         var name = document.getElementById("nameInput").value;
         alert("已提交：" + name);
-        closeJoinDialog();
+        mdui.close('#joinModal');
     }
-    </script>
+</script>
 
     <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
 
