@@ -7,55 +7,12 @@
     <title>七班关机党 - Shut Down Party of Class Seven</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
     <audio id="myAudio" src="https://sdpcs.github.io/bee.mp3" preload="auto"></audio>
-    <script>
-        function openJoinDialog() {
-            // 获取模态框
-            var modal = document.getElementById("joinModal");
-
-            // 显示模态框
-            modal.style.display = "block";
-        }
-
-        function closeJoinDialog() {
-            // 获取模态框
-            var modal = document.getElementById("joinModal");
-
-            // 隐藏模态框
-            modal.style.display = "none";
-        }
-     </script>
-     <style>
-        /* 样式可以根据需要进行调整 */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+    <style>
+        /* 可以根据需要进行样式调整 */
+        .modal-content {
             padding: 20px;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            text-align: center;
         }
-
-        .modal input {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 8px;
-        }
-
-        .modal button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-     </style>
+    </style>
 </head>
 <body class="mdui-theme-primary-indigo mdui-loaded mdui-appbar-with-toolbar mdui-drawer-body-left">
 
@@ -231,26 +188,32 @@
         </div>
     </div>
 
-    <div id="joinModal" class="modal">
-    <h2>加入关机党</h2>
-    <p>请填写您的姓名</p>
-    <input type="text" id="nameInput" placeholder="您的姓名">
-    <button onclick="submitForm()">提交</button>
-    <button onclick="closeJoinDialog()">关闭</button>
+    <div class="mdui-dialog" id="joinModal">
+    <div class="mdui-dialog-title">加入关机党</div>
+    <div class="mdui-dialog-content modal-content">
+        <p>请填写您的姓名</p>
+        <input type="text" id="nameInput" placeholder="您的姓名" class="mdui-textfield-input">
+    </div>
+    <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" onclick="submitForm()">提交</button>
+        <button class="mdui-btn mdui-ripple" onclick="closeJoinDialog()">关闭</button>
+    </div>
     </div>
 
     <script>
+    function openJoinDialog() {
+        var dialog = new mdui.Dialog('#joinModal');
+        dialog.open();
+    }
+
+    function closeJoinDialog() {
+        var dialog = new mdui.Dialog('#joinModal');
+        dialog.close();
+    }
+
     function submitForm() {
-        // 获取输入的姓名
         var name = document.getElementById("nameInput").value;
-
-        // 构建邮件内容
-        var emailContent = "姓名：" + name;
-
-        // 发送邮件，这里仅为演示，实际需要服务器端处理
-        alert("已提交：" + emailContent);
-
-        // 关闭模态框
+        alert("已提交：" + name);
         closeJoinDialog();
     }
     </script>
