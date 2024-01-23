@@ -1,0 +1,14 @@
+#stopwatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    /* font-size: 48px; */
+    font-size: calc((25vw + 25vh) / 2);
+    font-weight: bold;
+}
+
+/* #currentTime {
+    width: 100%;
+    height: 100%;
+} */
