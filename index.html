@@ -21,21 +21,17 @@
         }
     </style>
     <style>
-        /* Flex布局样式 */
-        .mdui-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-        }
-
+        /* 照片右浮动样式 */
         .mdui-typo {
             max-width: 70%;
+            position: relative;
         }
 
         .mdui-img-rounded {
             max-width: 25%;
-            margin-top: 80px;
+            position: absolute;
+            top: 80px; /* 调整照片距离顶部的距离 */
+            right: 0;
         }
     </style>
 
@@ -347,9 +343,7 @@
             </div>
             <div class="divider"></div>
         </div>
-        <div style="flex-basis: 25%;">
-            <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded">
-        </div>
+        <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded">
     </div>
 
     <div class="mdui-dialog" id="joinModal">
