@@ -21,15 +21,21 @@
         }
     </style>
     <style>
-        /* 照片右浮动样式 */
+        /* Flex布局样式 */
+        .mdui-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
         .mdui-typo {
             max-width: 70%;
         }
 
         .mdui-img-rounded {
             max-width: 25%;
-            float: right; /* 将照片浮动到右边 */
-            margin: 20px 0 20px 20px; /* 调整照片与文字之间的间距 */
+            margin-top: 80px;
         }
     </style>
 
@@ -341,7 +347,9 @@
             </div>
             <div class="divider"></div>
         </div>
-        <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded">
+        <div style="flex-basis: 25%;">
+            <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded">
+        </div>
     </div>
 
     <div class="mdui-dialog" id="joinModal">
