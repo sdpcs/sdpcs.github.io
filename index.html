@@ -21,24 +21,24 @@
         }
     </style>
     <style>
-    /* 调整原文和照片布局 */
-    .mdui-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-    }
+        /* 照片右侧布局样式 */
+        .mdui-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
 
-    .mdui-typo {
-        max-width: 70%; /* 调整原文的宽度 */
-    }
+        .mdui-typo {
+            max-width: 70%;
+            margin-right: 30px; /* 调整原文和照片之间的间距 */
+        }
 
-    .mdui-img-rounded {
-        max-width: 25%;
-        margin-top: 80px;
-        float: right; /* 将照片浮动到右边 */
-    }
-</style>
+        .mdui-img-rounded {
+            max-width: 25%;
+            margin-top: 80px;
+        }
+    </style>
 
 </head>
 <body class="mdui-theme-primary-indigo mdui-loaded mdui-appbar-with-toolbar mdui-drawer-body-left">
@@ -129,10 +129,6 @@
 
 
     <div class="mdui-container" style="text-align: center;">
-        <!-- 添加调整大小的照片 -->
-       <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded" style="max-width: 25%; margin-top: 80px;">
-       <a>Bee</a> 
-       
 
        <div class="mdui-typo">
             <h1>七班关机党章程</h1>
@@ -352,7 +348,8 @@
             </div>
             <div class="divider"></div>
            
-           
+            <img src="https://sdpcs.github.io/IMG_0568.jpg" alt="zmf的照片" class="mdui-img-rounded" style="max-width: 25%; margin-top: 80px;">
+            <a>Bee</a> 
 
         </div>
     </div>
