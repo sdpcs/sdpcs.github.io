@@ -372,6 +372,8 @@
         var url = "process_form.php";
         var params = "name=" + name;
         xhr.open("POST", url, true);
+        alert("已提交：" + name);
+        mdui.close('#joinModal');
 
         // 设置请求头
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
