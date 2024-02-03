@@ -5,53 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/ico" href="/shutdown.png" />
     <title>七班关机党 - Shut Down Party of Class Seven</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css"
-    />
     <link rel="stylesheet" href="style.css" />
-    <audio
-      id="myAudio"
-      src="https://sdpcs.github.io/bee.mp3"
-      preload="auto"
-    ></audio>
+    <link rel="stylesheet" href="//res.realtvop.eu.org/mdui/css/mdui.css" />
+    <script
+      type="text/javascript"
+      src="//res.realtvop.eu.org/mdui/js/mdui.js"
+    ></script>
   </head>
-  <body
-    class="mdui-theme-primary-indigo mdui-loaded mdui-appbar-with-toolbar mdui-drawer-body-left"
-  >
-    <header class="appbar mdui-appbar mdui-appbar-fixed">
-      <div class="mdui-toolbar mdui-color-red">
-        <div class="mdui-toolbar mdui-color-red">
-          <span
-            class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-yellow"
-            mdui-drawer="{target: '#main-drawer', swipe: true}"
-          >
-            <i class="mdui-icon material-icons">menu</i>
-          </span>
-          <a href="#" href="https://sdpcs.github.io">
-            <img
-              src="https://sdpcs.github.io/shutdown.png"
-              alt="shutdown icon"
-              style="max-height: 24px; margin-right: 8px"
-              href="#"
-              ;
-            />
-          </a>
-          <a href="#" class="mdui-typo-title mdui-text-color-yellow"
-            >七班关机党</a
-          >
-          <div class="mdui-toolbar-spacer"></div>
-          <a href="#" class="mdui-typo-subheading mdui-text-color-yellow"
-            >Shut Down Party of Class Seven</a
-          >
-          <button class="mdui-btn mdui-btn-icon" onclick="toggleDarkMode()">
-            <i class="mdui-icon material-icons">brightness_4</i>
-          </button>
-          <button class="mdui-btn mdui-btn-icon" onclick="toggleAudioPopup()">
-            <i class="mdui-icon material-icons">audiotrack</i>
-          </button>
-          <button class="mdui-btn" onclick="openJoinModal()">加入</button>
-        </div>
+
+  <body class="mdui-loaded mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-layout-auto">
+    <header class="appbar mdui-appbar mdui-appbar-fixed mdui-color-red">
+      <div class="mdui-toolbar mdui-color-red" style="background-color: #F44336 !important;">
+        <span
+          class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+          mdui-drawer="{target: '#main-drawer', swipe: true}"
+        >
+          <i class="mdui-icon material-icons">menu</i>
+        </span>
+        <i class="mdui-icon material-icons sdpcsIcon mdui-text-color-yellow"
+          >&#xe8ac;</i
+        >
+        <a class="mdui-typo-headline mdui-hidden-xs mdui-text-color-yellow"
+          >七班关机党 - <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of
+          <ins>C</ins>lass <ins>S</ins>even</a
+        >
       </div>
     </header>
 
@@ -61,673 +38,167 @@
         mdui-collapse="{accordion: false}"
         id="folders-list"
       >
-        <li class="mdui-collapse-item mdui-collapse-item-open">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <div class="mdui-list-item-content">七班关机党章程</div>
-            <i class="mdui-collapse-item-arrow mdui-icon material-icons"
-              >keyboard_arrow_down</i
-            >
-          </div>
-          <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-            <li class="mdui-list-item">
-              <a
-                href="#introduction"
-                class="mdui-btn mdui-btn-raised mdui-ripple"
-                >序言</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#overview" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >总纲</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a
-                href="#organization"
-                class="mdui-btn mdui-btn-raised mdui-ripple"
-                >组织机构</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a
-                href="#it_communist"
-                class="mdui-btn mdui-btn-raised mdui-ripple"
-                >信息技术共产</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a
-                href="#economic_construction"
-                class="mdui-btn mdui-btn-raised mdui-ripple"
-                >经济建设</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a
-                href="#leadership_responsibility"
-                class="mdui-btn mdui-btn-raised mdui-ripple"
-                >领导人责任</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a
-                href="#legal_responsibility"
-                class="mdui-btn mdui-btn-raised mdui-ripple"
-                >法律责任</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#oath" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >宣誓</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#others" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >附则</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li class="mdui-collapse-item mdui-collapse-item-open">
-          <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-            <div class="mdui-list-item-content">七班社会主义宪法</div>
-            <i class="mdui-collapse-item-arrow mdui-icon material-icons"
-              >keyboard_arrow_down</i
-            >
-          </div>
-          <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
-            <li class="mdui-list-item">
-              <a href="#chapter-1" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第一章 总则</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-2" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第二章 七班关机党</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-3" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第三章 全班同学代表大会</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-4" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第四章 同学委员会</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-5" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第五章 经济制度</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-6" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第六章 机构运作</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-7" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第七章 权利和义务</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-8" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第八章 法律责任</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-9" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第九章 经济制度</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-10" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第十章 班旗、班徽、班歌、首都</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-11" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第十一章 机构运作</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-12" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第十二章 权利和义务</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-13" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第十三章 法律责任</a
-              >
-            </li>
-            <li class="mdui-list-item">
-              <a href="#chapter-14" class="mdui-btn mdui-btn-raised mdui-ripple"
-                >第十四章 经济制度</a
-              >
-            </li>
-          </ul>
-        </li>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <a class="mdui-list-item-content" href="#partyConstitution">七班关机党章程</a>
+      </div>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <a class="mdui-list-item-content" href="#socialistConstitution">七班社会主义宪法</a>
+      </div>
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <a class="mdui-list-item-content" href="#struggleTips">与郑铭蜂展开斗争的建议</a>
+      </div>
       </ul>
     </div>
 
     <div class="mdui-container" style="text-align: center">
-      <img
-        src="https://sdpcs.github.io/IMG_0568.jpg"
-        alt="zmf的照片"
-        class="bee-img"
-      />
-      
-
-    <div class="laws">
-      <div class="">
-        <h1>七班关机党章程</h1>
-
-        <div id="introduction" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>序言</h2>
-            <p>
-              七班同学们在社会主义事业的征途上，迎来了一个全新的篇章。我们团结一致，秉持着马克思列宁主义的指导思想，以社会主义制度为基石，携手努力，共同建设一个和谐、公正、平等的班级。然而，在这个充满理想的舞台上，我们也面临着一些困扰和挑战。
-            </p>
-
-            <p>
-              郑铭蜂，作为现任信息技术委员，曾是我们班级的一位重要成员。然而，在信息技术方面的垄断和独裁统治，成为我们共同发展的绊脚石。他以一已私利为前提，霸占电脑，不听从中央的指挥，企图谋权篡位夺取最高权力。这样的行为违背了我们社会主义同学七班的初心和宗旨，阻碍了同学们共同奋斗的步伐。
-            </p>
-
-            <p>
-              在信息技术领域，郑铭蜂一度垄断了电脑资源，将其视为私人财产，不顾同学们的需求，一意孤行。这种独裁统治无疑剥夺了其他同学的权利，导致资源分配不均衡，阻碍了信息技术的共享和共产。这与我们所倡导的社会主义原则背道而驰，让同学们感到不满和无奈。
-            </p>
-
-            <p>
-              为了实现关机党的目标，即在郑铭蜂玩电脑的时候进行关机，我们决心推翻他在信息技术方面的错误做法，争取信息技术的共产和公正分配。我们追求的不仅仅是技术上的共享，更是班级事务的公平和平等。我们要打破垄断，推动信息技术的共产，让同学们在学习和发展中都能够平等地分享这一资源。
-            </p>
-
-            <p>
-              七班关机党的成立并非是对个体同学的指责，而是为了整个班级的共同利益和共产原则。我们希望同学们能够加入关机党，共同努力，共同实现社会主义同学七班的宗旨，创造一个更加和谐、公正、平等的学习环境。
-            </p>
-
-            <p>
-              让我们携手共进，为实现关机和信息技术的共产而努力奋斗。相信在我们共同的努力下，七班将迎来更加美好的明天，充满着理想、希望和团结的力量。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="overview" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>第一章 总纲</h3>
-            <p>
-              第一条
-              七班关机党是社会主义同学七班的核心领导力量，坚持以马克思列宁主义为指导思想，以社会主义制度为基石，推动全班同学共同奋斗。
-            </p>
-
-            <p>
-              第二条
-              七班关机党的最高目标是实现关机，为同学们创造更好的学习环境，促使班级事务的健康发展。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="organization" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>第二章 组织机构</h3>
-            <p>
-              第三条
-              七班关机党设立全班党员代表大会和中央委员会，由全班党员选举产生。中央委员会选举产生总书记，总书记为七班关机党最高领导。
-            </p>
-
-            <p>
-              第四条
-              全班党员代表大会是七班关机党的最高权力机关，每学期召开一次，重大问题可随时召开。大会决定关机党的大事，选举产生关机党的领导人。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="it_communist" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>第三章 信息技术共产</h3>
-            <p>
-              第五条
-              七班关机党将积极推动信息技术的共产，打破郑铭蜂对信息技术的垄断，实现信息技术的公平分享和共同利用。
-            </p>
-
-            <p>
-              第六条
-              郑铭蜂在信息技术方面的垄断和独裁统治是违背社会主义同学七班宗旨的行为，关机党决心推翻其霸占电脑、不听从中央指挥的错误做法。
-            </p>
-
-            <p>
-              第七条
-              七班关机党倡导在郑铭蜂玩电脑的时候进行关机，以实现信息技术的共产和公正分配。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="economic_construction" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>第四章 经济建设</h3>
-            <p>
-              第八条
-              七班关机党将在信息技术共产的基础上，鼓励同学们积极参与经济建设，共同创造富裕和谐的班级。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="leadership_responsibility" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>第五章 领导人责任</h3>
-            <p>
-              第九条
-              关机党的领导人应当密切关注同学们的需求，切实维护同学们的权益，听取和尊重全班同学的意见，确保关机党的决策合理公正。
-            </p>
-
-            <p>
-              第十条
-              领导人要严守关机党的纪律，不得违背关机党章程的规定，不得谋取私利，要为实现关机和班级共同目标而努力。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="legal_responsibility" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>第六章 法律责任</h3>
-            <p>
-              第十一条
-              关机党对于违反关机党章程的行为将进行批评教育，经过教育无效的，将追究其法律责任。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="oath" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>第七章 宣誓</h3>
-            <p>
-              第十二条
-              七班关机党党员在加入关机党时应当庄重宣誓：维护班级的关机事业，忠诚于关机党，不谋取私利，为同学们创造更好的学习环境而努力奋斗。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-
-        <div id="others" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h3>附则</h3>
-            <p>
-              第十三条
-              本章程的修改由全班党员代表大会决定，经中央委员会批准后生效。
-            </p>
-
-            <p>
-              第十四条
-              本章程解释权属于社会主义同学七班的最高权力机关——全班党员代表大会。
-            </p>
-
-            <p>本章程自公布之日起生效。</p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <h1>七班社会主义宪法</h1>
-        <div id="chapter-1" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第一章 总则</h2>
-            <p>
-              第一条
-              为更好地组织同学们共同建设社会主义班级，制定本宪法，明确社会主义同学七班的基本政治制度，确保同学们的权利和义务。
-            </p>
-            <p>
-              第二条
-              七班社会主义宪法以马克思列宁主义为指导思想，以社会主义制度为基础，坚持党的领导，保障同学们的民主权利，推动班级事业的发展。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-2" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第二章 七班关机党</h2>
-            <p>
-              第三条
-              七班关机党是社会主义同学七班的最高政治领导力量，负责领导全班同学为实现关机事业而努力奋斗。
-            </p>
-            <p>
-              第四条
-              实现关机党设立全班党员代表大会和中央委员会，由全班党员选举产生。中央委员会选举产生总书记，总书记为七班关机党最高领导。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-3" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第三章 全班同学代表大会</h2>
-            <p>
-              第五条
-              全班同学代表大会是社会主义同学七班的最高权力机关，由全班同学代表组成。每学期召开一次，重大问题可随时召开。
-            </p>
-            <p>
-              第六条
-              全班同学代表大会决定七班的大事，选举产生全班组长，由全班组长组成组长会议，决定组长会议主席。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-4" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第四章 同学委员会</h2>
-            <p>
-              第七条
-              同学委员会是社会主义同学七班的最高行政机关，设有纪律委员、组织委员、文娱委员、宣传委员等职务。
-            </p>
-            <p>
-              第八条
-              同学委员会主席即班长，由全班同学选举产生。同学委员会主席负责领导全班行政工作，执行全班同学代表大会的决定。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-5" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第五章 经济制度</h2>
-            <p>
-              第九条
-              七班将积极探索符合社会主义原则的经济制度，鼓励同学们参与班级经济建设，推动全班同学共同富裕。
-            </p>
-            <p>
-              第十条
-              班级经济收支由同学委员会负责管理，确保经济运作的合理性和透明度。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-6" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第六章 机构运作</h2>
-            <p>
-              第十一条
-              各机构之间要保持密切联系，协同合作，确保社会主义同学七班的各项工作有序推进。
-            </p>
-            <p>
-              第十二条
-              各级领导干部要加强党性修养，密切联系同学们的实际需求，关心同学们的思想动态，切实维护同学们的合法权益。
-            </p>
-            <p>
-              第十三条
-              社会主义同学七班的各级干部要定期接受党性教育，提高政治觉悟和组织领导能力，为班级的长远发展贡献力量。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-7" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第七章 权利和义务</h2>
-            <p>
-              第十四条
-              同学们有言论、出席、监督等权利，有维护社会主义同学七班正常秩序的义务。
-            </p>
-            <p>
-              第十五条
-              全班同学代表大会、同学委员会和各级领导干部有向同学们宣传政策，解答疑惑的义务，要接受同学们的监督。
-            </p>
-            <p>
-              第十六条
-              各级领导干部要严守党的纪律，不得滥用权力，不得以个人名义谋取私利，要为同学们服务，为班级的共同目标而努力奋斗。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-8" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第八章 法律责任</h2>
-            <p>
-              第十七条
-              各级领导干部如违反本宪法，经批评教育无效的，将追究其法律责任，对涉嫌犯罪的将移交司法机关处理。
-            </p>
-            <p>
-              第十八条
-              实现关机党有权对违反本宪法的同学进行批评教育，直至取消其党员资格，情节严重的移交司法机关处理。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-9" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第九章 经济制度</h2>
-            <p>
-              第十九条
-              社会主义同学七班将根据实际情况积极探索和完善符合社会主义原则的经济制度，鼓励同学们参与班级经济建设，推动全班同学共同富裕。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-10" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第十章 班旗、班徽、班歌、首都</h2>
-            <p>
-              第二十条
-              七班的班旗为“腾龙扬帆跃鲸红日旗”，象征着同学们飞扬向上、奋勇前进的精神。
-            </p>
-            <p>
-              第二十一条
-              班徽为“七色花徽”，寓意七班同学在各个领域绽放光芒，共同构筑丰富多彩的班级生活。
-            </p>
-            <p>
-              第二十二条
-              班歌为“原神之歌”，表达七班同学对真理、正义、友谊的追求，唤起班级共同奋斗的豪情。
-            </p>
-            <p>
-              第二十三条
-              首都为“讲台”，是同学们学习和交流的重要场所，象征着班级的知识殿堂和智慧集结地。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-11" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第十一章 机构运作</h2>
-            <p>
-              第十一条
-              各机构之间要保持密切联系，协同合作，确保社会主义同学七班的各项工作有序推进。
-            </p>
-            <p>
-              第十二条
-              各级领导干部要加强党性修养，密切联系同学们的实际需求，关心同学们的思想动态，切实维护同学们的合法权益。
-            </p>
-            <p>
-              第十三条
-              社会主义同学七班的各级干部要定期接受党性教育，提高政治觉悟和组织领导能力，为班级的长远发展贡献力量。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-12" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第十二章 权利和义务</h2>
-            <p>
-              第十四条
-              同学们有言论、出席、监督等权利，有维护社会主义同学七班正常秩序的义务。
-            </p>
-            <p>
-              第十五条
-              全班同学代表大会、同学委员会和各级领导干部有向同学们宣传政策，解答疑惑的义务，要接受同学们的监督。
-            </p>
-            <p>
-              第十六条
-              各级领导干部要严守党的纪律，不得滥用权力，不得以个人名义谋取私利，要为同学们服务，为班级的共同目标而努力奋斗。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-13" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第十三章 法律责任</h2>
-            <p>
-              第十七条
-              各级领导干部如违反本宪法，经批评教育无效的，将追究其法律责任，对涉嫌犯罪的将移交司法机关处理。
-            </p>
-            <p>
-              第十八条
-              实现关机党有权对违反本宪法的同学进行批评教育，直至取消其党员资格，情节严重的移交司法机关处理。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div id="chapter-14" class="mdui-card mdui-shadow-0">
-          <div class="mdui-card-content">
-            <h2>第十四章 经济制度</h2>
-            <p>
-              第十九条
-              社会主义同学七班将根据实际情况积极探索和完善符合社会主义原则的经济制度，鼓励同学们参与班级经济建设，推动全班同学共同富裕。
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-      </div>
-
-
-
-      <div class="">
-        <h1>七班关机党章程与宪法（草案）</h1>
-        <p>1. 七班关机党总则</p>
-        <p>
-          1.1 电力至上：关机党宣誓，电源按钮是我们的圣物，关机是我们的信仰。
-        </p>
-        <p>2. 七班关机党</p>
-        <p>2.1 党徽说明：党徽中心是一个微型电源按钮，象征我们对关机的忠诚。</p>
-        <p>2.2 党歌：《关机进行曲》，节奏紧凑，歌词颂扬关机的神圣仪式。</p>
-        <p>3. 全班同学代表大会</p>
-        <p>
-          3.1
-          闭关大会：每学期一次的闭关大会，全体党员齐心协力，共同探讨关机技巧。
-        </p>
-        <p>4. 同学委员会</p>
-        <p>
-          4.1 技术研究部：致力于研究最新的电脑休眠技术，以确保关机更为高效。
-        </p>
-        <p>5. 经济制度</p>
-        <p>
-          5.1
-          节能奖励：党员每月按时关机可获得节能金币，可在党内商店兑换实用物品。
-        </p>
-        <p>6. 机构运作</p>
-        <p>
-          6.1
-          关机之夜：每月的第一周五晚，全体党员参与的盛大活动，集体关机，庆祝电力的休息。
-        </p>
-        <p>7. 权利和义务</p>
-        <p>7.1 关机权：每位党员有权在任何时候关机，不受任何人的阻挠。</p>
-        <p>8. 法律责任</p>
-        <p>
-          8.1
-          电脑维护法：任何人不得故意损害他人电脑，一经查实，将受到党内法律的制裁。
-        </p>
-        <p>9. 经济制度</p>
-        <p>9.1 关机基金：为支持党内活动，设立了关机基金，由党员自愿捐赠。</p>
-        <p>10. 班旗、班徽、班歌、首都</p>
-        <p>
-          10.1 班旗：图案为一台关闭状态的电脑，象征着我们永不熄灭的关机之志。
-        </p>
-        <p>11. 机构运作</p>
-        <p>
-          11.1 关机礼仪：制定详细的关机礼仪，包括合十致意、电源按钮轻敲等步骤。
-        </p>
-        <p>12. 权利和义务</p>
-        <p>
-          12.1
-          维护党纪：党员有义务维护关机党的光荣传统，严守党纪，杜绝随意重启行为。
-        </p>
-        <p>13. 法律责任</p>
-        <p>
-          13.1 电脑和平条约：与其他班级签署电脑和平条约，共同维护校园电力平安。
-        </p>
-        <p>14. 经济制度</p>
-        <p>14.1 电脑环保奖励：每学期评选出最佳电脑环保党员，颁发奖牌和奖金。</p>
-      </div>
-    </div>
-</div>
-
-
-
-
-
-    <div class="mdui-dialog" id="joinModal">
-      <div class="mdui-dialog-title">加入关机党</div>
-      <div class="mdui-dialog-content modal-content">
-        <p>请填写您的姓名</p>
-        <input
-          type="text"
-          id="nameInput"
-          placeholder="您的姓名"
-          class="mdui-textfield-input"
+        <img
+          src="/IMG_0568.jpg"
+          alt="zmf的照片"
+          class="bee-img"
         />
-      </div>
-      <div class="mdui-dialog-actions">
-        <button class="mdui-btn mdui-ripple" onclick="submitForm()">
-          提交
-        </button>
-        <button class="mdui-btn mdui-ripple" mdui-dialog-close>关闭</button>
-      </div>
-    </div>
 
-    <script>
-      function openJoinModal() {
-        var dialog = new mdui.Dialog("#joinModal");
-        dialog.open();
-      }
+        <div class="sdpcs-title mdui-text-color-yellow mdui-color-red">
+          七班关机党
+          <br />
+          <span class="en">
+            <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of<ins>C</ins>lass <ins>S</ins>even
+          </span>
+        </div>
 
-      function submitForm() {
-        var name = document.getElementById("nameInput").value;
-
-        var xhr = new XMLHttpRequest();
-        var url = "process_form.php";
-        var params = "name=" + name;
-        xhr.open("POST", url, true);
-        alert("已提交：" + name);
-        mdui.close("#joinModal");
-
-        // 设置请求头
-        xhr.setRequestHeader(
-          "Content-type",
-          "application/x-www-form-urlencoded"
-        );
-
-        xhr.onreadystatechange = function () {
-          if (xhr.readyState == 4 && xhr.status == 200) {
-            // 处理服务器返回的响应
-            alert(xhr.responseText);
-          }
-        };
-
-        // 发送请求
-        xhr.send(params);
-      }
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
-
-    <script>
-      function toggleDarkMode() {
-        var body = document.body;
-        body.classList.toggle("mdui-theme-layout-dark");
-      }
-    </script>
-    <script>
-      function toggleAudioPopup() {
-        // 获取音频元素
-        var audio = document.getElementById("myAudio");
-
-        // 判断音频是否正在播放
-        if (audio.paused) {
-          // 如果暂停，则开始播放
-          audio.play();
-        } else {
-          // 如果正在播放，则暂停
-          audio.pause();
-        }
-      }
-    </script>
+        <div id="partyConstitution" class="sth">
+          <h1>七班关机党章程</h1>
+          <h2>序言</h2>
+          <p>七班同学们在社会主义事业的征途上，迎来了一个全新的篇章。我们团结一致，秉持着马克思列宁主义的指导思想，以社会主义制度为基石，携手努力，共同建设一个和谐、公正、平等的班级。然而，在这个充满理想的舞台上，我们也面临着一些困扰和挑战。</p>
+          <p>郑铭蜂，作为现任信息技术委员，曾是我们班级的一位重要成员。然而，在信息技术方面的垄断和独裁统治，成为我们共同发展的绊脚石。他以一已私利为前提，霸占电脑，不听从中央的指挥，企图谋权篡位夺取最高权力。这样的行为违背了我们社会主义同学七班的初心和宗旨，阻碍了同学们共同奋斗的步伐。</p>
+          <p>在信息技术领域，郑铭蜂一度垄断了电脑资源，将其视为私人财产，不顾同学们的需求，一意孤行。这种独裁统治无疑剥夺了其他同学的权利，导致资源分配不均衡，阻碍了信息技术的共享和共产。这与我们所倡导的社会主义原则背道而驰，让同学们感到不满和无奈。</p>
+          <p>为了实现关机党的目标，即在郑铭蜂玩电脑的时候进行关机，我们决心推翻他在信息技术方面的错误做法，争取信息技术的共产和公正分配。我们追求的不仅仅是技术上的共享，更是班级事务的公平和平等。我们要打破垄断，推动信息技术的共产，让同学们在学习和发展中都能够平等地分享这一资源。</p>
+          <p>七班关机党的成立并非是对个体同学的指责，而是为了整个班级的共同利益和共产原则。我们希望同学们能够加入关机党，共同努力，共同实现社会主义同学七班的宗旨，创造一个更加和谐、公正、平等的学习环境。</p>
+          <p>让我们携手共进，为实现关机和信息技术的共产而努力奋斗。相信在我们共同的努力下，七班将迎来更加美好的明天，充满着理想、希望和团结的力量。</p>
+          <h2>第一章 总纲</h2>
+          <h3>第一条</h3>
+          <p>七班关机党是社会主义同学七班的核心领导力量，坚持以马克思列宁主义为指导思想，以社会主义制度为基石，推动全班同学共同奋斗。</p>
+          <h3>第二条</h3>
+          <p>七班关机党的最高目标是实现关机，为同学们创造更好的学习环境，促使班级事务的健康发展。</p>
+          <h2>第二章 组织机构</h2>
+          <h3>第三条</h3>
+          <p>七班关机党设立全班党员代表大会和中央委员会，由全班党员选举产生。中央委员会选举产生总书记，总书记为七班关机党最高领导。</p>
+          <h3>第四条</h3>
+          <p>全班党员代表大会是七班关机党的最高权力机关，每学期召开一次，重大问题可随时召开。大会决定关机党的大事，选举产生关机党的领导人。</p>
+          <h2>第三章 信息技术共产</h2>
+          <h3>第五条</h3>
+          <p>七班关机党将积极推动信息技术的共产，打破郑铭蜂对信息技术的垄断，实现信息技术的公平分享和共同利用。</p>
+          <h3>第六条</h3>
+          <p>郑铭蜂在信息技术方面的垄断和独裁统治是违背社会主义同学七班宗旨的行为，关机党决心推翻其霸占电脑、不听从中央指挥的错误做法。</p>
+          <h3>第七条</h3>
+          <p>七班关机党倡导在郑铭蜂玩电脑的时候进行关机，以实现信息技术的共产和公正分配。</p>
+          <h2>第四章 经济建设</h2>
+          <h3>第八条</h3>
+          <p>七班关机党将在信息技术共产的基础上，鼓励同学们积极参与经济建设，共同创造富裕和谐的班级。</p>
+          <h2>第五章 领导人责任</h2>
+          <h3>第九条</h3>
+          <p>关机党的领导人应当密切关注同学们的需求，切实维护同学们的权益，听取和尊重全班同学的意见，确保关机党的决策合理公正。</p>
+          <h3>第十条</h3>
+          <p>领导人要严守关机党的纪律，不得违背关机党章程的规定，不得谋取私利，要为实现关机和班级共同目标而努力。</p>
+          <h2>第六章 法律责任</h2>
+          <h3>第十一条</h3>
+          <p>关机党对于违反关机党章程的行为将进行批评教育，经过教育无效的，将追究其法律责任。</p>
+          <h2>第七章 宣誓</h2>
+          <h3>第十二条</h3>
+          <p>七班关机党党员在加入关机党时应当庄重宣誓维护班级的关机事业，忠诚于关机党，不谋取私利，为同学们创造更好的学习环境而努力奋斗。</p>
+          <h2>附则</h2>
+          <h3>第十三条</h3>
+          <p>本章程的修改由全班党员代表大会决定，经中央委员会批准后生效。</p>
+          <h3>第十四条</h3>
+          <p>本章程解释权属于社会主义同学七班的最高权力机关——全班党员代表大会。</p>
+          <p>本章程自公布之日起生效。</p>
+        </div>
+        
+        <div id="socialistConstitution" class="sth">
+          <h1>七班社会主义宪法</h1>
+        
+          <h2>第一章 总则</h2>
+          <p>第一条 为更好地组织同学们共同建设社会主义班级，制定本宪法，明确社会主义同学七班的基本政治制度，确保同学们的权利和义务。</p>
+          <p>第二条 七班社会主义宪法以马克思列宁主义为指导思想，以社会主义制度为基础，坚持党的领导，保障同学们的民主权利，推动班级事业的发展。</p>
+        
+          <h2>第二章 七班关机党</h2>
+          <p>第三条 七班关机党是社会主义同学七班的最高政治领导力量，负责领导全班同学为实现关机事业而努力奋斗。</p>
+          <p>第四条 关机党设立全班党员代表大会和中央委员会，由全班党员选举产生。中央委员会选举产生总书记，总书记为七班关机党最高领导。</p>
+        
+          <h2>第三章 全班同学代表大会</h2>
+          <p>第五条 全班同学代表大会是社会主义同学七班的最高权力机关，由全班同学代表组成。每学期召开一次，重大问题可随时召开。</p>
+          <p>第六条 全班同学代表大会决定七班的大事，选举产生全班组长，由全班组长组成组长会议，决定组长会议主席。</p>
+        
+          <h2>第四章 同学委员会</h2>
+          <p>第七条 同学委员会是社会主义同学七班的最高行政机关，设有纪律委员、组织委员、文娱委员、宣传委员等职务。</p>
+          <p>第八条 同学委员会主席即班长，由全班同学选举产生。同学委员会主席负责领导全班行政工作，执行全班同学代表大会的决定。</p>
+        
+          <h2>第五章 经济制度</h2>
+          <p>第九条 七班将积极探索符合社会主义原则的经济制度，鼓励同学们参与班级经济建设，推动全班同学共同富裕。</p>
+          <p>第十条 班级经济收支由同学委员会负责管理，确保经济运作的合理性和透明度。</p>
+        
+          <h2>第六章 机构运作</h2>
+          <p>第十一条 各机构之间要保持密切联系，协同合作，确保社会主义同学七班的各项工作有序推进。</p>
+          <p>第十二条 各级领导干部要加强党性修养，密切联系同学们的实际需求，关心同学们的思想动态，切实维护同学们的合法权益。</p>
+          <p>第十三条 社会主义同学七班的各级干部要定期接受党性教育，提高政治觉悟和组织领导能力，为班级的长远发展贡献力量。</p>
+        
+          <h2>第七章 权利和义务</h2>
+          <p>第十四条 同学们有言论、出席、监督等权利，有维护社会主义同学七班正常秩序的义务。</p>
+          <p>第十五条 全班同学代表大会、同学委员会和各级领导干部有向同学们宣传政策，解答疑惑的义务，要接受同学们的监督。</p>
+          <p>第十六条 各级领导干部要严守党的纪律，不得滥用权力，不得以个人名义谋取私利，要为同学们服务，为班级的共同目标而努力奋斗。</p>
+        
+          <h2>第八章 法律责任</h2>
+          <p>第十七条 各级领导干部如违反本宪法，经批评教育无效的，将追究其法律责任，对涉嫌犯罪的将移交司法机关处理。</p>
+          <p>第十八条 实现关机党有权对违反本宪法的同学进行批评教育，直至取消其党员资格，情节严重的移交司法机关处理。</p>
+        
+          <h2>第九章 经济制度</h2>
+          <p>第十九条 社会主义同学七班将根据实际情况积极探索和完善符合社会主义原则的经济制度，鼓励同学们参与班级经济建设，推动全班同学共同富裕。</p>
+        
+          <h2>第十章 班旗、班徽、班歌、首都</h2>
+          <p>第二十条 七班的班旗为“腾龙扬帆跃鲸红日旗”，象征着同学们飞扬向上、奋勇前进的精神。</p>
+          <p>第二十一条 班徽为“七色花徽”，寓意七班同学在各个领域绽放光芒，共同构筑丰富多彩的班级生活。</p>
+          <p>第二十二条 班歌为“团结就是力量”，激励同学们勇往直前，共同奋斗，创造更加美好的未来。</p>
+          <p>第二十三条 班级首都为“荣耀之城”，是七班同学共同守护、共同建设的精神家园。</p>
+        
+          <h2>第十一章 附则</h2>
+          <p>第二十四条 本宪法解释权归社会主义同学七班全体同学代表大会。</p>
+          <p>第二十五条 本宪法自发布之日起施行，任何违反本宪法的行为均无效。</p>
+        </div>
+        
+        <div id="struggleTips" class="sth">
+          <h1>与郑铭蜂展开斗争的建议</h1>
+        
+          <h2>1. 保持冷静与理智</h2>
+          <p>不管遇到何种挑衅，都要保持冷静和理智，避免陷入情绪化的争斗。</p>
+          <p>理性地表达自己的观点，避免过激言辞。</p>
+        
+          <h2>2. 建立联盟</h2>
+          <p>寻找支持者，建立联盟。在班级中，能够获得更多人的支持将增加斗争的力量。</p>
+          <p>通过沟通，争取其他同学对关机党的认同。</p>
+        
+          <h2>3. 积极宣传</h2>
+          <p>利用各种渠道积极宣传关机党的理念和宗旨，让更多同学了解关机党。</p>
+          <p>通过社交媒体、口头宣传等方式传递积极正面的信息。</p>
+        
+          <h2>4. 组织有趣的活动</h2>
+          <p>通过组织有趣的活动，吸引更多同学参与关机党，让关机党成为一个充满乐趣和活力的集体。</p>
+          <p>制定有趣的规则和奖惩制度，增加参与的积极性。</p>
+        
+          <h2>5. 以身作则</h2>
+          <p>在关机党的原则下，以身作则，展示给他人一个积极的榜样。</p>
+          <p>通过良好的行为影响他人，让更多人愿意加入关机党。</p>
+        
+          <h2>6. 和平解决争端</h2>
+          <p>如果可能，寻求和平解决争端。通过沟通、协商，尽量避免激化矛盾。</p>
+          <p>强调合作共赢的理念，争取双方都能够接受的解决方案。</p>
+        
+          <h2>7. 法律法规</h2>
+          <p>如果对方的行为涉及违法或违反学校规定，可以考虑寻求法律或学校的支持。</p>
+          <p>通过正规途径解决问题，确保自身的权益。</p>
+        
+          <h2>8. 自我提升</h2>
+          <p>在斗争的同时，注重自身的提升。通过学业和个人能力的提升，增加在班级中的影响力。</p>
+          <p>成为一个受人尊敬和信赖的人物，更容易争取支持。</p>
+        </div>
+        
   </body>
 </html>

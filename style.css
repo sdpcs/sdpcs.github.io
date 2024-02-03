@@ -1,15 +1,51 @@
-/* 可以根据需要进行样式调整 */
-.modal-content {
+.sdpcsIcon {
+    transform: scale(1.5);
+}
+
+.bee-img {
+    width: 40vw;
+    cursor: not-allowed;
+}
+
+.sdpcs-title {
+    width: 100%;
+    font-size: 100px;
+    line-height: 50px;
+    padding-top: 40px;
+}
+.sdpcs-title>.en {
+    font-size: 25px;
+}
+
+
+
+.sth {
+    /* background-color: #fff; */
     padding: 20px;
-}
-
-/* 分隔线样式 */
-.divider {
-    border-top: 2px solid #e0e0e0;
-    margin: 50px 0;
-}
-
-.laws {
-    display: flex;
-    flex-direction: row;
-}
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* .sth h1, .sth h2, .sth h3 { */
+    /* color: #333; */
+  /* } */
+  
+  .sth h1 {
+    text-align: center;
+  }
+  
+  .sth h2, .sth h3 {
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+  }
+  
+  .sth p {
+    line-height: 1.6;
+    /* color: #555; */
+  }
+  
+  .sth h2 {
+    margin-top: 30px;
+  }
+  

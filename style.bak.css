@@ -1,0 +1,15 @@
+/* 可以根据需要进行样式调整 */
+.modal-content {
+    padding: 20px;
+}
+
+/* 分隔线样式 */
+.divider {
+    border-top: 2px solid #e0e0e0;
+    margin: 50px 0;
+}
+
+.laws {
+    display: flex;
+    flex-direction: row;
+}
