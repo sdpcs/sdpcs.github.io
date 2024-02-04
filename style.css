@@ -19,7 +19,6 @@
 /* 设置侧边栏的样式 */
 .mdui-drawer {
     width: 400px; /* 设置侧边栏宽度为 300 像素，你可以根据需要调整宽度 */
-    background-color: #fff; /* 设置背景颜色 */
     border-radius: 10px; /* 设置圆角 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
     overflow: hidden; /* 确保内容不会超出圆角区域 */
@@ -29,11 +28,6 @@
 .mdui-drawer .mdui-list-item {
     padding: 12px 16px;
     font-size: 16px;
-}
-
-/* 设置鼠标悬停时的样式 */
-.mdui-drawer .mdui-list-item:hover {
-    background-color: #f0f0f0; /* 鼠标悬停时的背景颜色 */
 }
 
 
