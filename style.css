@@ -18,6 +18,7 @@
 }
 /* 设置侧边栏的样式 */
 .mdui-drawer {
+    width: 300px; /* 设置侧边栏宽度为 300 像素，你可以根据需要调整宽度 */
     background-color: #fff; /* 设置背景颜色 */
     border-radius: 10px; /* 设置圆角 */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
