@@ -16,21 +16,21 @@
 .sdpcs-title>.en {
     font-size: 25px;
 }
-/* 添加圆角样式到侧边栏 */
+/* 设置侧边栏的样式 */
 .mdui-drawer {
-    border-radius: 10px;
+    background-color: #fff; /* 设置背景颜色 */
+    border-radius: 10px; /* 设置圆角 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
     overflow: hidden; /* 确保内容不会超出圆角区域 */
 }
 
-/* 为了使侧边栏标题和链接更美观，你可以修改这些样式 */
+/* 设置侧边栏链接的样式 */
 .mdui-drawer .mdui-list-item {
     padding: 12px 16px;
-}
-
-.mdui-drawer .mdui-list-item-content {
     font-size: 16px;
 }
 
+/* 设置鼠标悬停时的样式 */
 .mdui-drawer .mdui-list-item:hover {
     background-color: #f0f0f0; /* 鼠标悬停时的背景颜色 */
 }
