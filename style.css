@@ -62,7 +62,7 @@
     margin-top: 30px;
   }
   @media (max-width: 600px) {
-    .sdpcs-title img {
+    .mdui-toolbar img {
         display: none;
     }
   }
