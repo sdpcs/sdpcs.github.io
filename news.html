@@ -47,9 +47,6 @@
 <body class="mdui-loaded mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-layout-auto">
 <header class="appbar mdui-appbar mdui-appbar-fixed mdui-color-red">
     <div class="mdui-toolbar mdui-color-red" style="background-color: #F44336 !important;">
-        <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-drawer="{target: '#main-drawer', swipe: true}">
-            <i class="mdui-icon material-icons">menu</i>
-        </span>
         <i class="mdui-icon material-icons sdpcsIcon mdui-text-color-yellow">&#xe8ac;</i>
         <img src="/sdpcs.png" style="height:60%;">
         <a class="mdui-typo-headline mdui-hidden-xs mdui-text-color-yellow"> - <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of <ins>C</ins>lass <ins>S</ins>even</a>
@@ -68,24 +65,18 @@
         <div class="mdui-col-md-12">
             <div class="container">
                 <div class="mdui-row">
-<div class="image-container">
+
                     <div class="mdui-col-md-3" style="position: relative;">
-    <!-- 图片容器 -->
-    <div style="position: relative;">
-        <!-- 完整的图片 -->
-        <img src="/IMG_0568.jpg" class="mdui-img-fluid" alt="IMG_0568">
-        <!-- 覆盖的透明链接 -->
-        <a href="https://start.realtvop.eu.org" style="position: absolute; top: 40%; left: 40%; transform: translate(-50%, -50%); width: 50px; height: 50px; background-color: transparent;"></a>
-    </div>
-</div>
-<div class="mdui-col-md-3" style="position: relative;">
-    <!-- 图片容器 -->
-    <div style="position: relative;">
-        <!-- 完整的图片 -->
-        <img src="/zhuo.jpg" class="mdui-img-fluid" alt="zhuo">
-    </div>
-</div>
-</div>
+                    <!-- 图片容器 -->
+                    <div style="position: relative;">
+                    <!-- 完整的图片 -->
+                    <img src="/IMG_0568.jpg" class="mdui-img-fluid" alt="IMG_0568">
+                    <!-- 覆盖的透明链接 -->
+                    <a href="https://start.realtvop.eu.org" style="position: absolute; top: 40%; left: 40%; transform: translate(-50%, -50%); width: 50px; height: 50px; background-color: transparent;"></a>
+                    </div>
+                    </div>
+
+
                     <div class="mdui-col-md-9">
                         <!-- 七班通讯社关于七班关机党第一届中央委员会的报道 -->
                         <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red article-btn">七班通讯社关于七班关机党第一届中央委员会的报道</button>
@@ -161,23 +152,6 @@
         });
     });
 </script>
-    <style>
-    /* 默认情况下，图片竖着显示在文本左边 */
-    .image-container {
-        float: left;
-        margin-right: 20px; /* 图片和文本之间的间距 */
-        margin-bottom: 20px; /* 图片下方的间距 */
-    }
-
-    /* 媒体查询：当页面宽度不够时，图片横着显示在文本上方 */
-    @media (max-width: 768px) {
-        .image-container {
-            float: none; /* 取消浮动 */
-            margin: 0 auto 20px auto; /* 图片居中显示，上下间距保留 */
-            display: block; /* 将图片显示为块级元素 */
-            text-align: center; /* 图片水平居中 */
-        }
-    }
-</style>
+    
 </body>
 </html>
