@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="//res.realtvop.eu.org/mdui/css/mdui.css">
     <script src="//res.realtvop.eu.org/mdui/js/mdui.js" type="text/javascript"></script>
-    <style>
         .container {
             border-radius: 20px;
             padding: 20px;
@@ -28,10 +27,35 @@
             color: #fff;
             width: 100%;
             text-align: center;
-            padding: 10px;
+            padding: 50px 0; /* 增加垂直内边距 */
             background-color: #F44336;
             border: none;
             cursor: pointer;
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            /* 垂直和水平居中文本 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mdui-col-md-3 {
+            text-align: center;
+        }
+        .mdui-col-md-3 img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .mdui-col-md-3,
+            .mdui-col-md-9 {
+                width: 100%;
+                text-align: center;
+            }
+            .mdui-col-md-3 img {
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
