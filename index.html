@@ -45,21 +45,42 @@
         mdui-collapse="{accordion: false}"
         id="folders-list"
       >
-      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple" onclick="toggleChapters()">
-    <a class="mdui-list-item-content" href="javascript:void(0)">七班关机党章程</a>
-</div>
-<div class="mdui-collapse-item-body" id="chapterList" style="display: none;">
-    <a class="mdui-list-item-content" href="#preface">序言</a>
-    <a class="mdui-list-item-content" href="#chapter1">第一章 总纲</a>
-    <a class="mdui-list-item-content" href="#chapter2">第二章 组织机构</a>
-    <a class="mdui-list-item-content" href="#chapter3">第三章 信息技术共产</a>
-    <a class="mdui-list-item-content" href="#chapter4">第四章 经济建设</a>
-    <a class="mdui-list-item-content" href="#chapter5">第五章 领导人责任</a>
-    <a class="mdui-list-item-content" href="#chapter6">第六章 法律责任</a>
-    <a class="mdui-list-item-content" href="#chapter7">第七章 宣誓</a>
-    <a class="mdui-list-item-content" href="#appendix">附则</a>
-</div>
-
+      <li class="mdui-collapse-item">
+    <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">vpn_key</i>
+        <div class="mdui-list-item-content">七班关机党章程</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+    </div>
+    <ul class="mdui-collapse-item-body mdui-list mdui-list-dense" id="chapterList">
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#preface">序言</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#chapter1">第一章 总纲</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#chapter2">第二章 组织机构</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#chapter3">第三章 信息技术共产</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#chapter4">第四章 经济建设</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#chapter5">第五章 领导人责任</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#chapter6">第六章 法律责任</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#chapter7">第七章 宣誓</a>
+        </li>
+        <li class="mdui-list-item mdui-ripple">
+            <a class="mdui-list-item-content" href="#appendix">附则</a>
+        </li>
+        </ul>
+      </li>
 
       <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
         <a class="mdui-list-item-content" href="#socialistConstitution">七班社会主义宪法</a>
@@ -73,7 +94,7 @@
           class="bee-img"
           style="width: 100%"
         />
-      </ul>
+    </ul>
     </div>
 
     <div class="mdui-container" style="text-align: center">
@@ -225,16 +246,7 @@
           <p>成为一个受人尊敬和信赖的人物，更容易争取支持。</p>
         </div>
         <audio src="bee.mp3" controls></audio>
-      <script>
-    function toggleChapters() {
-        var chapterList = document.getElementById("chapterList");
-        if (chapterList.style.display === "none") {
-            chapterList.style.display = "block";
-        } else {
-            chapterList.style.display = "none";
-        }
-    }
-</script>
+      
 
 
   </body>
