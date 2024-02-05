@@ -68,7 +68,7 @@
                             <img src="/zhuo.jpg" class="mdui-img-fluid" alt="zhuo">
                         </div>
                         <div class="mdui-col-md-9">
-                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-indigo article-btn">七班通讯社关于七班关机党第一届中央委员会的报道</button>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red article-btn">七班通讯社关于七班关机党第一届中央委员会的报道</button>
                             <div class="content">
                                <p><strong>铁英 七通社讯</strong></p>
 
@@ -82,7 +82,7 @@
 
     <p>本次全会的召开标志着七班关机党在关机事业上迈出了重要的一步，必将为班级的团结和进步注入新的活力和动力。 七班通讯社将继续关注并报道关机党的发展进程，为七班同学们提供及时准确的信息报道。</p>
                             </div>
-                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-indigo article-btn">关于《关闭郑铭蜂正在使用的计算机的方法》向七班关机党第一届中央委员会第一次全体会议作的报告</button>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red article-btn">关于《关闭郑铭蜂正在使用的计算机的方法》向七班关机党第一届中央委员会第一次全体会议作的报告</button>
                             <div class="content">
                                 <p>尊敬的各位同志：</p>
     <p>我作为七班关机党的中央委员会总书记、中央委员会政治局第一书记、中央关机行动执行委员会主席、关机事业武装力量政治委员、中央纪律检查委员会委员长、数学课代表、社会主义学业互助组第一组组长、关机党第一组组委书记的迈克尔卓皓逊，今天很荣幸能够在我们关机党第一届中央委员会第一次全体会议上向各位同志报告。</p>
@@ -92,7 +92,7 @@
     <p>让我们携手努力，共同为关机党的发展和班级的进步而努力奋斗！</p>
     <p>谢谢大家！</p>
                             </div>
-                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-indigo article-btn">七班关机党第一届中央委员会第一次全体会议关于《关闭郑铭蜂正在使用的计算机的方法》的决议</button>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red article-btn">七班关机党第一届中央委员会第一次全体会议关于《关闭郑铭蜂正在使用的计算机的方法》的决议</button>
                             <div class="content">
                                 <p>在七班关机党第一届中央委员会第一次全体会议上，针对郑铭蜂同志对电脑资源的垄断行为，大家经过认真讨论和充分交流，达成了以下决议。</p>
     <p>全体与会人员一致认为，郑铭蜂同志对电脑资源的垄断行为已严重影响了班级的公平和秩序，损害了同学们的利益，必须予以重视和解决。</p>
@@ -102,7 +102,7 @@
     <p>关机党中央委员会将全力支持和配合各项行动的开展，为维护班级的正常秩序和同学们的权益而努力。</p>
     <p>以上是七班关机党第一届中央委员会第一次全体会议关于《关闭郑铭蜂正在使用的计算机的方法》的决议，我们期待全体关机党党员的积极参与和支持，共同促成这一目标的实现。</p>
                             </div>
-                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-indigo article-btn">关闭郑铭蜂正在使用的计算机的方法</button>
+                            <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-red article-btn">关闭郑铭蜂正在使用的计算机的方法</button>
                             <div class="content">
                                 <p>针对郑铭蜂正在使用的计算机的情况，我们可以采取多种方法进行关机，以确保电脑资源的公平分配和共享。以下是一些具体的关机方法：</p>
     <ul>
@@ -123,23 +123,20 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var buttons = document.querySelectorAll('.article-btn');
-            buttons.forEach(function(button) {
-                button.addEventListener('click', function() {
-                    var content = button.nextElementSibling;
-                    var isOpen = content.style.display === 'block';
-                    if (!isOpen) {
-                        buttons.forEach(function(btn) {
-                            btn.nextElementSibling.style.display = 'none';
-                        });
-                        content.style.display = 'block';
-                    } else {
-                        content.style.display = 'none';
-                    }
-                });
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.article-btn');
+        buttons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var content = button.nextElementSibling;
+                var isOpen = content.style.display === 'block';
+                if (!isOpen) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
