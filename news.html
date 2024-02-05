@@ -34,28 +34,18 @@
             cursor: pointer;
             display: block;
             overflow: hidden;
-            white-space: nowrap;
+            white-space: normal;
             text-overflow: ellipsis;
             /* 垂直和水平居中文本 */
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .mdui-col-md-3 {
-            text-align: center;
-        }
-        .mdui-col-md-3 img {
-            max-width: 100%;
-            height: auto;
-        }
+        /* 媒体查询：在较窄的屏幕上，图片并排显示 */
         @media (max-width: 768px) {
-            .mdui-col-md-3,
-            .mdui-col-md-9 {
-                width: 100%;
-                text-align: center;
-            }
-            .mdui-col-md-3 img {
-                margin-bottom: 20px;
+            .mdui-col-md-3 {
+                flex-basis: 50%;
+                max-width: 50%;
             }
         }
     </style>
