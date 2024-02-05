@@ -28,7 +28,7 @@
             color: #fff;
             width: 100%;
             text-align: center;
-            padding: 50px 0; /* 增加垂直内边距 */
+            padding: 70px 0; /* 增加垂直内边距 */
             background-color: #F44336;
             border: none;
             cursor: pointer;
@@ -41,13 +41,7 @@
             justify-content: center;
             align-items: center;
         }
-        /* 媒体查询：在较窄的屏幕上，图片并排显示 */
-        @media (max-width: 768px) {
-            .mdui-col-md-3 {
-                flex-basis: 50%;
-                max-width: 50%;
-            }
-        }
+    
     </style>
 </head>
 <body class="mdui-loaded mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-layout-auto">
@@ -74,6 +68,7 @@
         <div class="mdui-col-md-12">
             <div class="container">
                 <div class="mdui-row">
+<div class="image-container">
                     <div class="mdui-col-md-3" style="position: relative;">
     <!-- 图片容器 -->
     <div style="position: relative;">
@@ -88,9 +83,8 @@
     <div style="position: relative;">
         <!-- 完整的图片 -->
         <img src="/zhuo.jpg" class="mdui-img-fluid" alt="zhuo">
-        <!-- 覆盖的透明链接 -->
-        <a href="your_link_here" style="position: absolute; top: 40%; left: 40%; transform: translate(-50%, -50%); width: 50px; height: 50px; background-color: transparent;"></a>
     </div>
+</div>
 </div>
                     <div class="mdui-col-md-9">
                         <!-- 七班通讯社关于七班关机党第一届中央委员会的报道 -->
@@ -167,5 +161,23 @@
         });
     });
 </script>
+    <style>
+    /* 默认情况下，图片竖着显示在文本左边 */
+    .image-container {
+        float: left;
+        margin-right: 20px; /* 图片和文本之间的间距 */
+        margin-bottom: 20px; /* 图片下方的间距 */
+    }
+
+    /* 媒体查询：当页面宽度不够时，图片横着显示在文本上方 */
+    @media (max-width: 768px) {
+        .image-container {
+            float: none; /* 取消浮动 */
+            margin: 0 auto 20px auto; /* 图片居中显示，上下间距保留 */
+            display: block; /* 将图片显示为块级元素 */
+            text-align: center; /* 图片水平居中 */
+        }
+    }
+</style>
 </body>
 </html>
