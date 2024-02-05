@@ -163,13 +163,17 @@
 
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var collapses = document.querySelectorAll('.mdui-collapse-item');
+    document.addEventListener('DOMContentLoaded', function() {
+        var items = document.querySelectorAll('.mdui-collapse-item-header');
 
-            collapses.forEach(function(collapse) {
-                new mdui.Collapse(collapse);
+        items.forEach(function(item) {
+            item.addEventListener('click', function() {
+                var content = item.nextElementSibling;
+                content.classList.toggle('mdui-collapse-item-body-active');
             });
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
