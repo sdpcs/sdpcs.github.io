@@ -61,7 +61,7 @@
   .sth h2 {
     margin-top: 30px;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1200px) {
     .mdui-toolbar img {
         display: none;
     }
