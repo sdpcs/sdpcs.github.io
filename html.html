@@ -4,38 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>班级主页</title>
-   <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css"
-    />
-    <link rel="stylesheet" href="style.bak.css" />
+    <!-- MDUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/mdui@2.0.3/mdui.css">
+    <script src="https://unpkg.com/mdui@2.0.3/mdui.global.js"></script>
+
+    <style>
+        /* 添加颜色和圆角样式 */
+        body {
+            background-color: #f3f3f3;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .block {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .clock {
+            font-size: 3em;
+            color: #333333;
+            text-align: center;
+        }
+        .timer {
+            font-size: 2em;
+            color: #333333;
+            text-align: center;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+            margin: 0 10px;
+        }
+    </style>
 </head>
-<body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
+<body>
 
-<div class="mdui-container">
+<div class="container">
 
-    <!-- 实时北京时间时钟 -->
-    <div class="mdui-typo-display-3" id="clock"></div>
+    <!-- 时钟 -->
+    <div class="block clock">
+        <div id="clock"></div>
+    </div>
 
     <!-- 计时器 -->
-    <div class="mdui-textfield">
-        <label class="mdui-textfield-label">计时器</label>
-        <input class="mdui-textfield-input" type="text" id="timer" value="00:00:00" readonly/>
-        <div class="mdui-textfield-helper">点击开始计时</div>
+    <div class="block timer">
+        <div id="timer">00:00:00.000</div>
+        <div class="buttons">
+            <button class="mdui-btn mdui-btn-raised mdui-ripple button" id="startTimer">开始计时</button>
+            <button class="mdui-btn mdui-btn-raised mdui-ripple button" id="stopTimer">暂停计时</button>
+            <button class="mdui-btn mdui-btn-raised mdui-ripple button" id="resetTimer">归零</button>
+        </div>
     </div>
-    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="startTimer">开始计时</button>
-    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="stopTimer">停止计时</button>
-    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="resetTimer">归零</button>
 
-    <!-- 闹钟 -->
-    <div class="mdui-textfield">
-        <label class="mdui-textfield-label">闹钟时间</label>
-        <input class="mdui-textfield-input" type="time" id="alarmTime"/>
+    <!-- 倒计时器 -->
+    <div class="block timer">
+        <input class="mdui-textfield-input" type="text" id="countdownTime" placeholder="请输入倒计时时间（秒）"/>
+        <div id="countdownTimer">00:00:00</div>
+        <div class="buttons">
+            <button class="mdui-btn mdui-btn-raised mdui-ripple button" id="startCountdown">开始倒计时</button>
+            <button class="mdui-btn mdui-btn-raised mdui-ripple button" id="pauseCountdown">暂停倒计时</button>
+            <button class="mdui-btn mdui-btn-raised mdui-ripple button" id="resetCountdown">重置倒计时</button>
+        </div>
     </div>
-    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="setAlarm">设置闹钟</button>
 
     <!-- 天气部分 -->
-    <div class="mdui-card">
+    <div class="block mdui-card">
         <div class="mdui-card-primary">
             <div class="mdui-card-primary-title">广州市黄埔区天气</div>
         </div>
@@ -70,9 +112,10 @@
                 var hours = Math.floor(elapsedTime / 3600000);
                 var minutes = Math.floor((elapsedTime % 3600000) / 60000);
                 var seconds = Math.floor((elapsedTime % 60000) / 1000);
-                document.getElementById('timer').value = (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                var milliseconds = elapsedTime % 1000;
+                document.getElementById('timer').innerHTML = (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds + "." + milliseconds;
                 timerElapsed = elapsedTime;
-            }, 1000);
+            }, 1); // 每1毫秒更新一次
             timerRunning = true;
         }
     }
@@ -85,7 +128,7 @@
     function resetTimer() {
         clearInterval(timer);
         timerElapsed = 0;
-        document.getElementById('timer').value = "00:00:00";
+        document.getElementById('timer').innerHTML = "00:00:00.000";
         timerRunning = false;
     }
 
@@ -93,48 +136,54 @@
     document.getElementById('stopTimer').addEventListener('click', stopTimer);
     document.getElementById('resetTimer').addEventListener('click', resetTimer);
 
-    // 闹钟
-    function setAlarm() {
-        var alarmTime = document.getElementById('alarmTime').value;
-        var alarmHours = alarmTime.split(":")[0];
-        var alarmMinutes = alarmTime.split(":")[1];
+    // 倒计时器
+    var countdownTimer;
+    var countdownTime;
+    var countdownRunning = false;
 
-        var now = new Date();
-        var currentHours = now.getHours();
-        var currentMinutes = now.getMinutes();
-
-        var alarmHoursInt = parseInt(alarmHours);
-        var alarmMinutesInt = parseInt(alarmMinutes);
-        var currentHoursInt = parseInt(currentHours);
-        var currentMinutesInt = parseInt(currentMinutes);
-
-        var timeDiff = (alarmHoursInt - currentHoursInt) * 3600 + (alarmMinutesInt - currentMinutesInt) * 60;
-
-        if (timeDiff > 0) {
-            setTimeout(function () {
-                alert("时间到！");
-            }, timeDiff * 1000);
-        } else {
-            alert("请选择未来的时间！");
+    function startCountdown() {
+        if (!countdownRunning) {
+            countdownTime = parseInt(document.getElementById('countdownTime').value) * 1000; // 转换为毫秒
+            countdownTimer = setInterval(function () {
+                if (countdownTime > 0) {
+                    countdownTime -= 10;
+                    var hours = Math.floor(countdownTime / 3600000);
+                    var minutes = Math.floor((countdownTime % 3600000) / 60000);
+                    var seconds = Math.floor((countdownTime % 60000) / 1000);
+                    document.getElementById('countdownTimer').innerHTML = (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                } else {
+                    clearInterval(countdownTimer);
+                    alert("时间到！");
+                }
+            }, 10); // 每10毫秒更新一次
+            countdownRunning = true;
         }
     }
 
-    document.getElementById('setAlarm').addEventListener('click', setAlarm);
-</script>
-<script>
-    // 使用OpenWeatherMap API密钥
-    var apiKey = 3312dd3be53b1b5b940d6b8665ed3036;
+    function pauseCountdown() {
+        clearInterval(countdownTimer);
+        countdownRunning = false;
+    }
+
+    function resetCountdown() {
+        clearInterval(countdownTimer);
+        countdownRunning = false;
+        document.getElementById('countdownTimer').innerHTML = "00:00:00";
+    }
+
+    document.getElementById('startCountdown').addEventListener('click', startCountdown);
+    document.getElementById('pauseCountdown').addEventListener('click', pauseCountdown);
+    document.getElementById('resetCountdown').addEventListener('click', resetCountdown);
 
     // 获取天气信息
+    var apiKey = '3312dd3be53b1b5b940d6b8665ed3036';
+
     function getWeather() {
         fetch('https://api.openweathermap.org/data/2.5/weather?q=Guangzhou&appid=' + apiKey)
             .then(response => response.json())
             .then(data => {
-                // 解析返回的数据
                 var weatherDescription = data.weather[0].description;
-                var temperature = Math.round(data.main.temp - 273.15); // 温度转换为摄氏度
-
-                // 在页面上显示天气信息
+                var temperature = Math.round(data.main.temp - 273.15); 
                 document.getElementById('weather').innerHTML = '天气：' + weatherDescription + '<br>温度：' + temperature + '°C';
             })
             .catch(error => {
@@ -142,10 +191,8 @@
             });
     }
 
-    // 页面加载时获取天气信息
     window.onload = getWeather;
 </script>
-
 
 </body>
 </html>
