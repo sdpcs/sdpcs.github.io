@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>班级主页</title>
+    <!-- MDUI CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/css/mdui.min.css" integrity="sha512-YvqreHyH2Aw6yTKI8ZgJ6T/I7Js2D6sXbF0FZb2I3t6rvNKMyjZLMrhf4vRW1n2jPM3KvL2Uo1kmCmrquVxNdg==" crossorigin="anonymous" />
+    <!-- MDUI JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdui/0.4.3/js/mdui.min.js" integrity="sha512-t0z6kNmiKGfNv9VsmJ3N0OH1d/zMy8S2DSeXzqsbzuyF1ZK/GIstAbRr06bRbP5Uw1bxxQK/YICIXv3HxvtQCw==" crossorigin="anonymous"></script>
+</head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
+
+<div class="mdui-container">
+
+    <!-- 实时北京时间时钟 -->
+    <div class="mdui-typo-display-3" id="clock"></div>
+
+    <!-- 计时器 -->
+    <div class="mdui-textfield">
+        <label class="mdui-textfield-label">计时器</label>
+        <input class="mdui-textfield-input" type="text" id="timer" value="00:00:00" readonly/>
+        <div class="mdui-textfield-helper">点击开始计时</div>
+    </div>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="startTimer">开始计时</button>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="stopTimer">停止计时</button>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="resetTimer">归零</button>
+
+    <!-- 闹钟 -->
+    <div class="mdui-textfield">
+        <label class="mdui-textfield-label">闹钟时间</label>
+        <input class="mdui-textfield-input" type="time" id="alarmTime"/>
+    </div>
+    <button class="mdui-btn mdui-btn-raised mdui-ripple" id="setAlarm">设置闹钟</button>
+
+    <!-- 天气部分 -->
+    <div class="mdui-card">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">广州市黄埔区天气</div>
+        </div>
+        <div class="mdui-card-content" id="weather"></div>
+    </div>
+
+</div>
+
+<!-- JavaScript -->
+<script>
+    // 实时北京时间时钟
+    function updateTime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        document.getElementById('clock').innerHTML = (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    }
+    setInterval(updateTime, 1000);
+
+    // 计时器
+    var timer;
+    var timerRunning = false;
+    var timerStart;
+    var timerElapsed = 0;
+
+    function startTimer() {
+        if (!timerRunning) {
+            timerStart = Date.now() - timerElapsed;
+            timer = setInterval(function () {
+                var elapsedTime = Date.now() - timerStart;
+                var hours = Math.floor(elapsedTime / 3600000);
+                var minutes = Math.floor((elapsedTime % 3600000) / 60000);
+                var seconds = Math.floor((elapsedTime % 60000) / 1000);
+                document.getElementById('timer').value = (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+                timerElapsed = elapsedTime;
+            }, 1000);
+            timerRunning = true;
+        }
+    }
+
+    function stopTimer() {
+        clearInterval(timer);
+        timerRunning = false;
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        timerElapsed = 0;
+        document.getElementById('timer').value = "00:00:00";
+        timerRunning = false;
+    }
+
+    document.getElementById('startTimer').addEventListener('click', startTimer);
+    document.getElementById('stopTimer').addEventListener('click', stopTimer);
+    document.getElementById('resetTimer').addEventListener('click', resetTimer);
+
+    // 闹钟
+    function setAlarm() {
+        var alarmTime = document.getElementById('alarmTime').value;
+        var alarmHours = alarmTime.split(":")[0];
+        var alarmMinutes = alarmTime.split(":")[1];
+
+        var now = new Date();
+        var currentHours = now.getHours();
+        var currentMinutes = now.getMinutes();
+
+        var alarmHoursInt = parseInt(alarmHours);
+        var alarmMinutesInt = parseInt(alarmMinutes);
+        var currentHoursInt = parseInt(currentHours);
+        var currentMinutesInt = parseInt(currentMinutes);
+
+        var timeDiff = (alarmHoursInt - currentHoursInt) * 3600 + (alarmMinutesInt - currentMinutesInt) * 60;
+
+        if (timeDiff > 0) {
+            setTimeout(function () {
+                alert("时间到！");
+            }, timeDiff * 1000);
+        } else {
+            alert("请选择未来的时间！");
+        }
+    }
+
+    document.getElementById('setAlarm').addEventListener('click', setAlarm);
+</script>
+
+</body>
+</html>
