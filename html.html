@@ -40,7 +40,7 @@
             background-color: #e8e7e7;
             border-radius: 15px;
             padding: 20px;
-            font-size: 300%;
+            font-size: 200%;
             color: #666666;
             line-height: 1.6;
         }
@@ -127,8 +127,11 @@
         </div>
       </header>
 
-<div class="container">
-
+<div class="container" style="padding-top: 80px">
+    <div class="card" >
+        <div style="font-size: x-large; color:#F44336; font-weight: bold;">伟大、光荣、正确的七班关机党万岁！</div>
+        <div style="font-size: small; color:#5c5c5c; text-align: end;">——伟大的领袖<strong>迈克尔卓皓逊</strong>同志</div>
+    </div>
     <!-- 时钟 -->
     <div class="card">
         <div class="title">北京（首都）时间</div>
@@ -142,7 +145,7 @@
         <div class="button-container">
             <button class="button" id="startTimer">开始计时</button>
             <button class="button" id="stopTimer">暂停计时</button>
-            <button class="button" id="resetTimer">归零</button>
+            <button class="button" id="resetTimer">重置</button>
         </div>
     </div>
 
@@ -157,11 +160,19 @@
             <label for="countdownSecond">  秒钟:</label>
             <input type="number" id="countdownSecond" min="0" max="59" value="0" class="countdown-input">
         </div>
+        <div style="margin-bottom: 20px;"></div>
         <div class="content" id="countdownTimer">00:00:00.000</div>
         <div class="button-container">
-            <button class="button" id="startCountdown">开始倒计时</button>
-            <button class="button" id="pauseCountdown">暂停倒计时</button>
-            <button class="button" id="resetCountdown">重置倒计时</button>
+            <button class="button" id="startCountdown">开始计时</button>
+            <button class="button" id="pauseCountdown">暂停计时</button>
+            <button class="button" id="resetCountdown">重置</button>
+        </div>
+    </div>
+    <div class="card">
+        <div class="title">点名器</div> 
+        <div class="content" id="randomNameDisplay">点击“点名”按钮开始点名</div>
+        <div class="button-container">
+            <button class="button" id="pickRandomName">点名</button>
         </div>
     </div>
 
@@ -369,6 +380,67 @@ window.onload = function() {
     getForecastWeather();
 };
 
+    // 学生信息
+    var students = {
+            "1": "曾梓涵",
+            "2": "陈嘉昊",
+            "3": "陈锦泽",
+            "4": "陈昕昊",
+            "5": "陈旭睿",
+            "6": "方子荣",
+            "7": "何羿",
+            "8": "吉思宇",
+            "9": "纪明希",
+            "10": "李君昊",
+            "11": "沈安南",
+            "12": "吴展鹏",
+            "13": "向吉可",
+            "14": "许智轩",
+            "15": "易宇宸",
+            "16": "郑铭峰",
+            "17": "钟浩宇",
+            "18": "钟盛昌",
+            "19": "周彦君",
+            "20": "卓皓轩",
+            "21": "曹茜",
+            "22": "曾婧恩",
+            "23": "陈彦君",
+            "24": "陈英悦",
+            "25": "陈芷瑶",
+            "26": "龚子涵",
+            "27": "洪懿",
+            "28": "胡书勤",
+            "29": "黄若菡",
+            "30": "雷诗涵",
+            "31": "李琛慧",
+            "32": "梁靖悦",
+            "33": "秦华穗",
+            "34": "唐瑄",
+            "35": "陶婧萱",
+            "36": "王爱岚",
+            "37": "王静怡",
+            "38": "王雨昕",
+            "39": "吴诗瑜",
+            "40": "徐采玥",
+            "41": "许原菲",
+            "42": "易可欣",
+            "43": "张蕊",
+            "44": "赵书佳",
+            "45": "钟雨霖"
+        };
+
+    // 点名事件处理函数
+    document.getElementById('pickRandomName').addEventListener('click', function() {
+        // 随机选择一个学生
+        var studentIds = Object.keys(students);
+        var randomIndex = Math.floor(Math.random() * studentIds.length);
+        var randomStudentId = studentIds[randomIndex];
+        var randomStudentName = students[randomStudentId];
+
+        // 显示随机选中的学生姓名和学号
+        var displayElement = document.getElementById('randomNameDisplay');
+        displayElement.innerHTML = "<strong>学号:</strong> " + randomStudentId + ", <strong>姓名:</strong> " + randomStudentName;
+    });
 </script>
 
 </body>
