@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>初三七班主页</title>
     <!-- MDUI CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="//res.realtvop.eu.org/mdui/css/mdui.css" />
+    <script
+      type="text/javascript"
+      src="//res.realtvop.eu.org/mdui/js/mdui.js"
+    ></script>
     <style>
         body {
             background-color: #f5f5f5;
@@ -14,28 +19,28 @@
             padding: 0;
         }
         .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px;
         }
         .card {
             background-color: #ffffff;
-            border-radius: 8px;
+            border-radius: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 10px;
-            padding: 20px;
-            width: 320px;
+            padding: 40px;
         }
         .title {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: bold;
             color: #333333;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         .content {
-            font-size: 16px;
+            background-color: #e8e7e7;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 300%;
             color: #666666;
             line-height: 1.6;
         }
@@ -45,49 +50,88 @@
             margin-top: 20px;
         }
         .button {
-            background-color: #046dff;
+            background-color: #008cff;
             border: none;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
             cursor: pointer;
-            border-radius: 4px;
+            border-radius: 10px;
             transition: background-color 0.3s ease;
         }
         .button:hover {
-            background-color: #046dff;
+            background-color: #0048ff;
         }
         .weather {
             background-color: #ffffff;
-            border-radius: 8px;
+            border-radius: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin: 10px;
-            padding: 20px;
-            width: 320px;
+            padding: 40px;
         }
         .weather h2 {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
             color: #333333;
             margin-bottom: 20px;
         }
         .weather-content {
+            background-color: #e8e7e7;
+            border-radius: 15px;
+            padding: 20px;
             font-size: 16px;
             color: #666666;
             line-height: 1.6;
         }
+
+        .countdown-input {
+            width: 35px; /* 设置输入框宽度 */
+            padding: 5px; /* 设置输入框内边距 */
+            border: 1px solid #ccc; /* 设置边框样式 */
+            border-radius: 10px; /* 设置边框圆角 */
+            font-size: 16px; /* 设置字体大小 */
+            color: #333; /* 设置字体颜色 */
+            background-color: #fff; /* 设置背景颜色 */
+            outline: none; /* 去除聚焦时的外边框 */
+        }
+
+        /* 当输入框聚焦时的样式 */
+        .countdown-input:focus {
+            border-color: #007bff; /* 设置聚焦时的边框颜色 */
+            box-shadow: 0 0 5px #007bff; /* 设置聚焦时的阴影效果 */
+        }
     </style>
 </head>
 <body>
+    <header class="appbar mdui-appbar mdui-appbar-fixed mdui-color-red">
+        <div class="mdui-toolbar mdui-color-red" style="background-color: #F44336 !important;">
+          
+          <i class="mdui-icon material-icons sdpcsIcon mdui-text-color-yellow"
+            >&#xe8ac;</i
+          >
+          <img src="/sdpcs.png" style="height:60%;">
+          <a class="mdui-typo-headline mdui-hidden-xs mdui-text-color-yellow"
+            > - <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of
+            <ins>C</ins>lass <ins>S</ins>even</a
+          >
+          <div class="mdui-toolbar-spacer"></div> <!-- 添加一个空间来将导航项推到右侧 -->
+              <nav class="mdui-tab mdui-text-color-yellow">
+                  <a href="introduction.html" class="mdui-ripple">党的介绍</a>
+                  <a href="index.html" class="mdui-ripple">党的文件</a>
+                  <a href="leadership.html" class="mdui-ripple">党的领导</a>
+                  <a href="news.html" class="mdui-ripple">党的新闻</a>
+                  <a href="html.html" class="mdui-ripple">七班主页</a>
+              </nav>
+        </div>
+      </header>
 
 <div class="container">
 
     <!-- 时钟 -->
     <div class="card">
-        <div class="title">实时北京时间时钟</div>
+        <div class="title">北京（首都）时间</div>
         <div class="content" id="clock"></div>
     </div>
 
@@ -105,8 +149,15 @@
     <!-- 倒计时器 -->
     <div class="card">
         <div class="title">倒计时器</div>
-        <input class="mdui-textfield-input" type="text" id="countdownTime" placeholder="请输入倒计时时间（秒）"/>
-        <div class="content" id="countdownTimer">00:00:00</div>
+        <div>
+            <label for="countdownHour">小时:</label>
+            <input type="number" id="countdownHour" min="0" max="23" value="0" class="countdown-input">
+            <label for="countdownMinute">  分钟:</label>
+            <input type="number" id="countdownMinute" min="0" max="59" value="0" class="countdown-input">
+            <label for="countdownSecond">  秒钟:</label>
+            <input type="number" id="countdownSecond" min="0" max="59" value="0" class="countdown-input">
+        </div>
+        <div class="content" id="countdownTimer">00:00:00.000</div>
         <div class="button-container">
             <button class="button" id="startCountdown">开始倒计时</button>
             <button class="button" id="pauseCountdown">暂停倒计时</button>
@@ -115,16 +166,17 @@
     </div>
 
     <!-- 当前天气部分 -->
-    <div class="weather" id="currentWeather">
-        <h2>当前天气</h2>
-        <div class="weather-content" id="currentWeatherData"></div>
-    </div>
+<div class="weather" id="currentWeather">
+    <h2>当前天气</h2>
+    <div class="weather-content" id="currentWeatherData"></div>
+</div>
 
-    <!-- 未来天气预报部分 -->
-    <div class="weather" id="forecastWeather">
-        <h2>未来天气预报</h2>
-        <div class="weather-content" id="forecastWeatherData"></div>
-    </div>
+
+<!-- 未来天气预报部分 -->
+<div class="weather" id="forecastWeather">
+    <h2>未来天气预报</h2>
+    <div class="weather-content" id="forecastWeatherData"></div>
+</div>
 
 </div>
 
@@ -186,99 +238,137 @@
     document.getElementById('stopTimer').addEventListener('click', stopTimer);
     document.getElementById('resetTimer').addEventListener('click', resetTimer);
 
-    // 倒计时器
-    var countdownTimer;
-    var countdownTime;
-    var countdownRunning = false;
+    document.addEventListener('DOMContentLoaded', function () {
+            const hourInput = document.getElementById('countdownHour');
+            const minuteInput = document.getElementById('countdownMinute');
+            const secondInput = document.getElementById('countdownSecond');
+            const countdownTimer = document.getElementById('countdownTimer');
+            const startButton = document.getElementById('startCountdown');
+            const pauseButton = document.getElementById('pauseCountdown');
+            const resetButton = document.getElementById('resetCountdown');
 
-    function startCountdown() {
-        if (!countdownRunning) {
-            countdownTime = parseInt(document.getElementById('countdownTime').value) * 1000; // 转换为毫秒
-            countdownTimer = setInterval(function () {
-                if (countdownTime > 0) {
-                    countdownTime -= 10;
-                    var hours = Math.floor(countdownTime / 3600000);
-                    var minutes = Math.floor((countdownTime % 3600000) / 60000);
-                    var seconds = Math.floor((countdownTime % 60000) / 1000);
-                    document.getElementById('countdownTimer').innerHTML = (hours < 10 ? "0" : "") + hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-                } else {
-                    clearInterval(countdownTimer);
-                    alert("时间到！");
+            let interval;
+            let totalMilliseconds = 0;
+            let remainingTime = 0;
+            let paused = false;
+
+            function updateTimer() {
+                let hours = Math.floor(remainingTime / (1000 * 60 * 60));
+                let minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+                let milliseconds = remainingTime % 1000;
+
+                hours = String(hours).padStart(2, '0');
+                minutes = String(minutes).padStart(2, '0');
+                seconds = String(seconds).padStart(2, '0');
+                milliseconds = String(milliseconds).padStart(3, '0');
+
+                countdownTimer.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+            }
+
+            function startTimer() {
+                interval = setInterval(function () {
+                    if (remainingTime > 0) {
+                        remainingTime -= 10;
+                        updateTimer();
+                    } else {
+                        clearInterval(interval);
+                        updateTimer();
+                        alert('倒计时结束！');
+                    }
+                }, 10);
+            }
+
+            function pauseTimer() {
+                clearInterval(interval);
+                paused = true;
+                remainingTime = totalMilliseconds - (totalMilliseconds - remainingTime);
+            }
+
+            function resetTimer() {
+                clearInterval(interval);
+                totalMilliseconds = 0;
+                remainingTime = 0;
+                updateTimer();
+                paused = false;
+            }
+
+            startButton.addEventListener('click', function () {
+                if (!paused) {
+                    totalMilliseconds =
+                        (parseInt(hourInput.value) * 60 * 60 * 1000) +
+                        (parseInt(minuteInput.value) * 60 * 1000) +
+                        (parseInt(secondInput.value) * 1000);
+                    remainingTime = totalMilliseconds;
                 }
-            }, 10); // 每10毫秒更新一次
-            countdownRunning = true;
-        }
-    }
+                paused = false;
+                startTimer();
+            });
 
-    function pauseCountdown() {
-        clearInterval(countdownTimer);
-        countdownRunning = false;
-    }
+            pauseButton.addEventListener('click', pauseTimer);
 
-    function resetCountdown() {
-        clearInterval(countdownTimer);
-        countdownRunning = false;
-        document.getElementById('countdownTimer').innerHTML = "00:00:00";
-    }
+            resetButton.addEventListener('click', resetTimer);
+        });
 
-    document.getElementById('startCountdown').addEventListener('click', startCountdown);
-    document.getElementById('pauseCountdown').addEventListener('click', pauseCountdown);
-    document.getElementById('resetCountdown').addEventListener('click', resetCountdown);
 
     // 获取当前天气信息
-    function getCurrentWeather() {
-        fetch('https://api.openweathermap.org/data/2.5/weather?q=Guangzhou&appid=3312dd3be53b1b5b940d6b8665ed3036')
-            .then(response => response.json())
-            .then(data => {
-                // 解析返回的数据
-                var currentWeather = `
-                    温度：${(data.main.temp - 273.15).toFixed(1)}°C<br>
-                    湿度：${data.main.humidity}%<br>
-                    风速：${data.wind.speed} 米/秒<br>
-                    天气：${data.weather[0].description}
+function getCurrentWeather() {
+    fetch('https://api.openweathermap.org/data/2.5/weather?q=Guangzhou&appid=3312dd3be53b1b5b940d6b8665ed3036')
+        .then(response => response.json())
+        .then(data => {
+            // 解析返回的数据
+            var currentWeather = `
+                温度：${(data.main.temp - 273.15).toFixed(1)}°C<br>
+                湿度：${data.main.humidity}%<br>
+                风速：${data.wind.speed} 米/秒，${data.wind.deg}°<br>
+                气压：${data.main.pressure} hPa<br>
+                天气：${data.weather[0].description}<br>
+                日出时间：${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}<br>
+                日落时间：${new Date(data.sys.sunset * 1000).toLocaleTimeString()}
+            `;
+            // 在页面上显示当前天气信息
+            document.getElementById('currentWeatherData').innerHTML = currentWeather;
+        })
+        .catch(error => {
+            console.error('获取当前天气信息时出错:', error);
+        });
+}
+
+// 获取未来天气预报信息
+function getForecastWeather() {
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=Guangzhou&appid=3312dd3be53b1b5b940d6b8665ed3036')
+        .then(response => response.json())
+        .then(data => {
+            // 解析返回的数据
+            var forecastWeather = '<h3>未来天气预报</h3>';
+            for (var i = 0; i < data.list.length; i++) {
+                var forecast = data.list[i];
+                var forecastDate = new Date(forecast.dt * 1000);
+                var forecastDateString = forecastDate.toLocaleDateString();
+                var forecastTimeString = forecastDate.toLocaleTimeString();
+                forecastWeather += `
+                    <div>${forecastDateString} ${forecastTimeString}</div>
+                    <div>温度：${(forecast.main.temp - 273.15).toFixed(1)}°C</div>
+                    <div>湿度：${forecast.main.humidity}%</div>
+                    <div>天气：${forecast.weather[0].description}</div>
+                    <div>降水概率：${(forecast.pop * 100).toFixed(0)}%</div>
+                    <br>
                 `;
-                // 在页面上显示当前天气信息
-                document.getElementById('currentWeatherData').innerHTML = currentWeather;
-            })
-            .catch(error => {
-                console.error('获取当前天气信息时出错:', error);
-            });
-    }
+            }
+            // 在页面上显示未来天气预报信息
+            document.getElementById('forecastWeatherData').innerHTML = forecastWeather;
+        })
+        .catch(error => {
+            console.error('获取未来天气预报信息时出错:', error);
+        });
+}
 
-    // 获取未来天气预报信息
-    function getForecastWeather() {
-        fetch('https://api.openweathermap.org/data/2.5/forecast?q=Guangzhou&appid=3312dd3be53b1b5b940d6b8665ed3036')
-            .then(response => response.json())
-            .then(data => {
-                // 解析返回的数据
-                var forecastWeather = '';
-                for (var i = 0; i < data.list.length; i++) {
-                    var forecast = data.list[i];
-                    var forecastDate = new Date(forecast.dt * 1000);
-                    var forecastDateString = forecastDate.toLocaleDateString();
-                    var forecastTimeString = forecastDate.toLocaleTimeString();
-                    forecastWeather += `
-                        <div>${forecastDateString} ${forecastTimeString}</div>
-                        <div>温度：${(forecast.main.temp - 273.15).toFixed(1)}°C</div>
-                        <div>湿度：${forecast.main.humidity}%</div>
-                        <div>风速：${forecast.wind.speed} 米/秒</div>
-                        <div>天气：${forecast.weather[0].description}</div>
-                        <br>
-                    `;
-                }
-                // 在页面上显示未来天气预报信息
-                document.getElementById('forecastWeatherData').innerHTML = forecastWeather;
-            })
-            .catch(error => {
-                console.error('获取未来天气预报信息时出错:', error);
-            });
-    }
+// 页面加载时获取当前天气信息和未来天气预报信息
+window.onload = function() {
+    getCurrentWeather();
+    getForecastWeather();
+};
 
-    // 页面加载时获取当前天气信息和未来天气预报信息
-    window.onload = function() {
-        getCurrentWeather();
-        getForecastWeather();
-    };
 </script>
 
 </body>
