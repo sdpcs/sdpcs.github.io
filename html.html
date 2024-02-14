@@ -149,6 +149,16 @@
             <button class="button" id="resetTimer">重置</button>
         </div>
     </div>
+    
+    <div class="card">
+        <div class="title">搜索网页</div>
+        <form id="searchForm" >
+            <input type="text" class="content" style="border: none; width: 250px;"id="searchInput" placeholder="输入搜索bing内容">
+            <div class="button-container">
+            <button type="button" class="button" onclick="searchBing()">搜索</button>
+            </div>
+        </form>
+    </div>
 
     <!-- 倒计时器 -->
     <div class="card">
@@ -442,6 +452,21 @@ window.onload = function() {
         var displayElement = document.getElementById('randomNameDisplay');
         displayElement.innerHTML = "<strong>学号:</strong> " + randomStudentId + ", <strong>姓名:</strong> " + randomStudentName;
     });
+    function searchBing() {
+            // 获取搜索框中的文本内容
+            var searchText = document.getElementById('searchInput').value;
+
+            // 检查搜索内容是否为空
+            if (searchText.trim() !== "") {
+                // 构建必应搜索的URL
+                var bingSearchURL = "https://www.bing.com/search?q=" + encodeURIComponent(searchText);
+
+                // 跳转到搜索结果页面
+                window.location.href = bingSearchURL;
+            } else {
+                alert("请输入搜索内容");
+            }
+        }
 </script>
 
 </body>
