@@ -62,7 +62,7 @@
     margin-top: 30px;
   }
   @media (max-width: 1200px) {
-    .mdui-toolbar img {
+    .mdui-toolbar mdui-typo-headline {
         display: none;
     }
   }
