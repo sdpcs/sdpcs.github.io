@@ -120,6 +120,31 @@
 
     document.getElementById('setAlarm').addEventListener('click', setAlarm);
 </script>
+<script>
+    // 使用OpenWeatherMap API密钥
+    var apiKey = 3312dd3be53b1b5b940d6b8665ed3036;
+
+    // 获取天气信息
+    function getWeather() {
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=Guangzhou&appid=' + apiKey)
+            .then(response => response.json())
+            .then(data => {
+                // 解析返回的数据
+                var weatherDescription = data.weather[0].description;
+                var temperature = Math.round(data.main.temp - 273.15); // 温度转换为摄氏度
+
+                // 在页面上显示天气信息
+                document.getElementById('weather').innerHTML = '天气：' + weatherDescription + '<br>温度：' + temperature + '°C';
+            })
+            .catch(error => {
+                console.error('获取天气信息时出错:', error);
+            });
+    }
+
+    // 页面加载时获取天气信息
+    window.onload = getWeather;
+</script>
+
 
 </body>
 </html>
