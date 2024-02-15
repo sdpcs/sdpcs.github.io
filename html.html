@@ -12,6 +12,7 @@
       src="//res.realtvop.eu.org/mdui/js/mdui.js"
     ></script>
     <style>
+        
         body {
             background-color: #f5f5f5;
             font-family: Arial, sans-serif;
@@ -20,7 +21,7 @@
         }
         .container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             padding: 40px;
         }
@@ -53,17 +54,17 @@
             background-color: #008cff;
             border: none;
             color: white;
-            padding: 15px 20px;
+            padding: 15px 10px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 16px;
             cursor: pointer;
             border-radius: 10px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.9s ease;
         }
         .button:hover {
-            background-color: #0048ff;
+            background-color: #0f3696;
         }
         .weather {
             background-color: #ffffff;
@@ -106,34 +107,35 @@
 </head>
 <body>
     <header class="appbar mdui-appbar mdui-appbar-fixed mdui-color-red">
-  <div class="mdui-toolbar mdui-color-red" style="background-color: #F44336 !important;">
-    <i class="mdui-icon material-icons sdpcsIcon mdui-text-color-yellow">&#xe8ac;</i>
-    <img src="/sdpcs.png" style="height:60%;">
-    <a class="mdui-typo-headline mdui-hidden-xs mdui-text-color-yellow"> - <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of <ins>C</ins>lass <ins>S</ins>even</a>
-  </div>
-</header>
+        <div class="mdui-toolbar mdui-color-red" style="background-color: #F44336 !important;">
+          <i class="mdui-icon material-icons sdpcsIcon mdui-text-color-yellow">&#xe8ac;</i>
+          <img src="/sdpcs.png" style="height:60%;">
+          <a class="mdui-typo-headline mdui-hidden-xs mdui-text-color-yellow"> - <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of <ins>C</ins>lass <ins>S</ins>even</a>
+        </div>
+      </header>
+      
+      <!-- 新增一个 div 来包裹导航项 -->
+      <div class="mdui-color-red" style="padding-top: 64px;"> <!-- 64px 是标题栏的高度 -->
+        <nav class="mdui-tab mdui-text-color-yellow" style="display: flex; justify-content: space-around;">
+          <a href="introduction.html" class="mdui-ripple">党的介绍</a>
+          <a href="index.html" class="mdui-ripple">党的文件</a>
+          <a href="leadership.html" class="mdui-ripple">党的领导</a>
+          <a href="news.html" class="mdui-ripple">党的新闻</a>
+          <a href="html.html" class="mdui-ripple">七班主页</a>
+        </nav>
+        
+      </div>
 
-<!-- 新增一个 div 来包裹导航项 -->
-<div class="mdui-color-red" style="padding-top: 64px;"> <!-- 64px 是标题栏的高度 -->
-  <nav class="mdui-tab mdui-text-color-yellow" style="display: flex; justify-content: space-around;">
-    <a href="introduction.html" class="mdui-ripple">党的介绍</a>
-    <a href="index.html" class="mdui-ripple">党的文件</a>
-    <a href="leadership.html" class="mdui-ripple">党的领导</a>
-    <a href="news.html" class="mdui-ripple">党的新闻</a>
-    <a href="html.html" class="mdui-ripple">七班主页</a>
-  </nav>
-</div>
-
-<div class="container" style="padding-top: 80px">
+<div class="container" style="padding-top: 40px;">
     <div class="card" >
-        <div style="font-size: x-large; color:#F44336; font-weight: bold;">伟大、光荣、正确的七班关机党万岁！</div>
-        <div style="font-size: small; color:#5c5c5c; text-align: end;padding-top: 50px;">——伟大的领袖<strong>迈克尔卓皓逊</strong>同志</div>
-        <div style="font-size: small; color:#5c5c5c; text-align: end;">《在七班关机党第一届中央委员会第一次全体会议上作的报告》</div>
+        <div style="font-size: x-large; color:#F44336; font-weight: bold;">通知</div>
+        <div class="content" style="font-size: small; margin-top: 10px;">要开学了赶紧完成作业</div>
     </div>
     <!-- 时钟 -->
     <div class="card">
         <div class="title">北京（首都）时间</div>
         <div class="content" id="clock"></div>
+        
     </div>
 
     <!-- 计时器 -->
@@ -150,7 +152,7 @@
     <div class="card">
         <div class="title">搜索网页</div>
         <form id="searchForm" >
-            <input type="text" class="content" style="border: none; width: 85%;"id="searchInput" placeholder="输入搜索bing内容">
+            <input type="text" class="content" style="border: none; width: 85%;"id="searchInput" placeholder="输入bing内容">
             <div class="button-container">
             <button type="button" class="button" onclick="searchBing()">搜索</button>
             </div>
@@ -178,7 +180,7 @@
     </div>
     <div class="card">
         <div class="title">点名器</div> 
-        <div class="content" id="randomNameDisplay">点击“点名”按钮开始点名</div>
+        <div class="content" id="randomNameDisplay">点击点名</div>
         <div class="button-container">
             <button class="button" id="pickRandomName">点名</button>
         </div>
@@ -274,6 +276,7 @@
 
 <!-- JavaScript -->
 <script>
+    
     // 实时北京时间时钟
     function updateClock() {
         var now = new Date();
