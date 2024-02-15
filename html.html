@@ -336,80 +336,80 @@
     }
 
     document.getElementById('startTimer').addEventListener('click', startTimer);
-    document.getElementById('stopTimer').addEventListener('click', stopTimer);
-    document.getElementById('resetTimer').addEventListener('click', resetTimer);
+document.getElementById('stopTimer').addEventListener('click', stopTimer);
+document.getElementById('resetTimer').addEventListener('click', resetTimer);
 
-    document.addEventListener('DOMContentLoaded', function () {
-            const hourInput = document.getElementById('countdownHour');
-            const minuteInput = document.getElementById('countdownMinute');
-            const secondInput = document.getElementById('countdownSecond');
-            const countdownTimer = document.getElementById('countdownTimer');
-            const startButton = document.getElementById('startCountdown');
-            const pauseButton = document.getElementById('pauseCountdown');
-            const resetButton = document.getElementById('resetCountdown');
+document.addEventListener('DOMContentLoaded', function () {
+    const hourInput = document.getElementById('countdownHour');
+    const minuteInput = document.getElementById('countdownMinute');
+    const secondInput = document.getElementById('countdownSecond');
+    const countdownTimer = document.getElementById('countdownTimer');
+    const startButton = document.getElementById('startCountdown');
+    const pauseButton = document.getElementById('pauseCountdown');
+    const resetButton = document.getElementById('resetCountdown');
 
-            let interval;
-            let totalMilliseconds = 0;
-            let remainingTime = 0;
-            let paused = false;
+    let interval;
+    let totalMilliseconds = 0;
+    let remainingTime = 0;
+    let paused = false;
 
-            function updateTimer() {
-                let hours = Math.floor(remainingTime / (1000 * 60 * 60));
-                let minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
-                let seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-                let milliseconds = remainingTime % 1000;
+    function updateTimer() {
+        let hours = Math.floor(remainingTime / (1000 * 60 * 60));
+        let minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+        let milliseconds = remainingTime % 1000;
 
-                hours = String(hours).padStart(2, '0');
-                minutes = String(minutes).padStart(2, '0');
-                seconds = String(seconds).padStart(2, '0');
-                milliseconds = String(milliseconds).padStart(3, '0');
+        hours = String(hours).padStart(2, '0');
+        minutes = String(minutes).padStart(2, '0');
+        seconds = String(seconds).padStart(2, '0');
+        milliseconds = String(milliseconds).padStart(3, '0');
 
-                countdownTimer.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
-            }
+        countdownTimer.textContent = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+    }
 
-            function startTimer() {
-                interval = setInterval(function () {
-                    if (remainingTime > 0) {
-                        remainingTime -= 10;
-                        updateTimer();
-                    } else {
-                        clearInterval(interval);
-                        updateTimer();
-                        alert('倒计时结束！');
-                    }
-                }, 10);
-            }
-
-            function pauseTimer() {
-                clearInterval(interval);
-                paused = true;
-                remainingTime = totalMilliseconds - (totalMilliseconds - remainingTime);
-            }
-
-            function resetTimer() {
-                clearInterval(interval);
-                totalMilliseconds = 0;
-                remainingTime = 0;
+    function startTimer() {
+        interval = setInterval(function () {
+            if (remainingTime > 0) {
+                remainingTime -= 10;
                 updateTimer();
-                paused = false;
+            } else {
+                clearInterval(interval);
+                updateTimer();
+                alert('倒计时结束！');
             }
+        }, 10);
+    }
 
-            startButton.addEventListener('click', function () {
-                if (!paused) {
-                    totalMilliseconds =
-                        (parseInt(hourInput.value) * 60 * 60 * 1000) +
-                        (parseInt(minuteInput.value) * 60 * 1000) +
-                        (parseInt(secondInput.value) * 1000);
-                    remainingTime = totalMilliseconds;
-                }
-                paused = false;
-                startTimer();
-            });
+    function pauseTimer() {
+        clearInterval(interval);
+        paused = true;
+    }
 
-            pauseButton.addEventListener('click', pauseTimer);
+    function resetTimer() {
+        clearInterval(interval);
+        totalMilliseconds = 0;
+        remainingTime = 0;
+        updateTimer();
+        paused = false;
+    }
 
-            resetButton.addEventListener('click', resetTimer);
-        });
+    startButton.addEventListener('click', function () {
+        if (!paused) {
+            totalMilliseconds =
+                (parseInt(hourInput.value) * 60 * 60 * 1000) +
+                (parseInt(minuteInput.value) * 60 * 1000) +
+                (parseInt(secondInput.value) * 1000);
+            remainingTime = totalMilliseconds;
+        }
+        paused = false;
+        startTimer();
+    });
+
+    pauseButton.addEventListener('click', pauseTimer);
+
+    resetButton.addEventListener('click', resetTimer);
+});
+
 
 
     // 获取当前天气信息
