@@ -106,26 +106,23 @@
 </head>
 <body>
     <header class="appbar mdui-appbar mdui-appbar-fixed mdui-color-red">
-        <div class="mdui-toolbar mdui-color-red" style="background-color: #F44336 !important;">
-          
-          <i class="mdui-icon material-icons sdpcsIcon mdui-text-color-yellow"
-            >&#xe8ac;</i
-          >
-          <img src="/sdpcs.png" style="height:60%;">
-          <a class="mdui-typo-headline mdui-hidden-xs mdui-text-color-yellow"
-            > - <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of
-            <ins>C</ins>lass <ins>S</ins>even</a
-          >
-          <div class="mdui-toolbar-spacer"></div> <!-- 添加一个空间来将导航项推到右侧 -->
-              <nav class="mdui-tab mdui-text-color-yellow">
-                  <a href="introduction.html" class="mdui-ripple">党的介绍</a>
-                  <a href="index.html" class="mdui-ripple">党的文件</a>
-                  <a href="leadership.html" class="mdui-ripple">党的领导</a>
-                  <a href="news.html" class="mdui-ripple">党的新闻</a>
-                  <a href="html.html" class="mdui-ripple">七班主页</a>
-              </nav>
-        </div>
-      </header>
+  <div class="mdui-toolbar mdui-color-red" style="background-color: #F44336 !important;">
+    <i class="mdui-icon material-icons sdpcsIcon mdui-text-color-yellow">&#xe8ac;</i>
+    <img src="/sdpcs.png" style="height:60%;">
+    <a class="mdui-typo-headline mdui-hidden-xs mdui-text-color-yellow"> - <ins>S</ins>hut<ins>d</ins>own <ins>P</ins>arty of <ins>C</ins>lass <ins>S</ins>even</a>
+  </div>
+</header>
+
+<!-- 新增一个 div 来包裹导航项 -->
+<div class="mdui-color-red" style="padding-top: 64px;"> <!-- 64px 是标题栏的高度 -->
+  <nav class="mdui-tab mdui-text-color-yellow" style="display: flex; justify-content: space-around;">
+    <a href="introduction.html" class="mdui-ripple">党的介绍</a>
+    <a href="index.html" class="mdui-ripple">党的文件</a>
+    <a href="leadership.html" class="mdui-ripple">党的领导</a>
+    <a href="news.html" class="mdui-ripple">党的新闻</a>
+    <a href="html.html" class="mdui-ripple">七班主页</a>
+  </nav>
+</div>
 
 <div class="container" style="padding-top: 80px">
     <div class="card" >
